@@ -147,8 +147,12 @@ Route::post('dashboard/gallery-category/delete',[GalleryCategoryController::clas
 
 
 Route::get('dashboard/basic',[ManageController::class, 'basic']);
+Route::post('dashboard/basic/update',[ManageController::class, 'basic_update']);
 Route::get('dashboard/socialmedia',[ManageController::class, 'socialmedia']);
+Route::post('dashboard/socialmedia/update',[ManageController::class, 'social_update']);
 Route::get('dashboard/contact',[ManageController::class, 'contact_info']);
+Route::post('dashboard/contact/update',[ManageController::class, 'contact_update']);
+
 
 
 

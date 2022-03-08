@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="{{ url('dashboard/teammember/submit') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ url('dashboard/contact/update') }}" enctype="multipart/form-data">
             @csrf
             <div class="card">
                 <div class="card-header card_header bg-dark">
@@ -43,25 +43,25 @@
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-phone-flip"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_facebook">
+                                <input type="text" class="form-control form_control" name="cont_phone1" value="{{ $contact->cont_phone1 }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-phone-flip"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_twitter">
+                                <input type="text" class="form-control form_control" name="cont_phone2"  value="{{ $contact->cont_phone2 }}" >
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-phone-flip"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_linkedin">
+                                <input type="text" class="form-control form_control" name="cont_phone3" value="{{ $contact->cont_phone3 }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-phone-flip"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_dribbble">
+                                <input type="text" class="form-control form_control" name="cont_phone4" value="{{ $contact->cont_phone4 }}">
                             </div>
                         </div>
                     </div>
@@ -70,25 +70,25 @@
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_facebook">
+                                <input type="email" class="form-control form_control" name="cont_email1" value="{{ $contact->cont_email1 }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_twitter">
+                                <input type="email" class="form-control form_control" name="cont_email2" value="{{ $contact->cont_email2 }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_linkedin">
+                                <input type="email" class="form-control form_control" name="cont_email3" value="{{ $contact->cont_email3 }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_dribbble">
+                                <input type="email" class="form-control form_control" name="cont_email4" value="{{ $contact->cont_email4 }}">
                             </div>
                         </div>
                     </div>
@@ -96,25 +96,25 @@
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-location-dot"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_facebook">
+                                <input type="text" class="form-control form_control" name="cont_add1" value="{{ $contact->cont_add1 }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-location-dot"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_twitter">
+                                <input type="text" class="form-control form_control" name="cont_add2" value="{{ $contact->cont_add2 }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-location-dot"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_linkedin">
+                                <input type="text" class="form-control form_control" name="cont_add3" value="{{ $contact->cont_add3 }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-location-dot"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_dribbble">
+                                <input type="text" class="form-control form_control" name="cont_add4" value="{{ $contact->cont_add4 }}">
                             </div>
                         </div>
                     </div>

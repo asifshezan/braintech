@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="{{ url('dashboard/teammember/submit') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ url('dashboard/basic/update') }}" enctype="multipart/form-data">
             @csrf
             <div class="card">
                 <div class="card-header card_header bg-dark">
@@ -43,7 +43,7 @@
                                 class="req_star">*</span>:</label>
                         <div class="col-sm-7">
                             <input type="text" class="form-control form_control" name="basic_company"
-                                value="{{ old('basic_company') }}">
+                                value="{{ $basic_all->basic_company }}">
                             @if ($errors->has('basic_company'))
                             <span class="error">{{ $errors->first('basic_company') }}</span>
                             @endif
@@ -54,7 +54,7 @@
                                 class="req_star">*</span>:</label>
                         <div class="col-sm-7">
                             <input type="text" class="form-control form_control" name="basic_title"
-                                value="{{ old('basic_title') }}">
+                                value="{{ $basic_all->basic_title }}">
                             @if ($errors->has('basic_title'))
                             <span class="error">{{ $errors->first('basic_title') }}</span>
                             @endif
@@ -63,26 +63,47 @@
 
                     <div class="row mb-3">
                         <label class="col-sm-3 col-form-label col_form_label">Main Logo:</label>
-                        <div class="col-sm-7">
+                        <div class="col-sm-5">
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control form_control" name="pic">
                             </div>
                         </div>
+                        <div class="col-sm-2">
+                            @if ($basic_all->basic_logo!='')
+                                <img src="{{ asset('uploads/basics/'.$basic_all->basic_logo) }}" alt="image" class="img-fluid" width="40">
+                                @else
+                                <img src="{{ asset('uploads/avatar.png')}}" class="img-fluid" width="40">
+                            @endif
+                        </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-sm-3 col-form-label col_form_label">Footer Logo:</label>
-                        <div class="col-sm-7">
+                        <div class="col-sm-5">
                             <div class="input-group mb-3">
-                                <input type="file" class="form-control form_control" name="footer">
+                                <input type="file" class="form-control form_control" name="flogo">
                             </div>
+                        </div>
+                        <div class="col-sm-2">
+                            @if ($basic_all->basic_flogo!='')
+                                <img src="{{ asset('uploads/basics/'.$basic_all->basic_flogo) }}" alt="image" class="img-fluid" width="40">
+                                @else
+                                <img src="{{ asset('uploads/avatar.png')}}" class="img-fluid" width="40">
+                            @endif
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-sm-3 col-form-label col_form_label">Favicon Logo:</label>
-                        <div class="col-sm-7">
+                        <div class="col-sm-5">
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control form_control" name="favicon">
                             </div>
+                        </div>
+                        <div class="col-sm-2">
+                            @if ($basic_all->basic_favicon!='')
+                                <img src="{{ asset('uploads/basics/'.$basic_all->basic_favicon) }}" alt="image" class="img-fluid" width="40">
+                                @else
+                                <img src="{{ asset('uploads/avatar.png')}}" class="img-fluid" width="40">
+                            @endif
                         </div>
                     </div>
                 </div>

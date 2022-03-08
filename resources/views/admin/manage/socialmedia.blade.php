@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="{{ url('dashboard/teammember/submit') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ url('dashboard/socialmedia/update') }}" enctype="multipart/form-data">
             @csrf
             <div class="card">
                 <div class="card-header card_header bg-dark">
@@ -43,61 +43,61 @@
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-facebook"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_facebook">
+                                <input type="text" class="form-control form_control" name="sm_facebook" value="{{ $social->sm_facebook }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-twitter"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_twitter">
+                                <input type="text" class="form-control form_control" name="sm_twitter" value="{{ $social->sm_twitter }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-linkedin-in"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_linkedin">
+                                <input type="text" class="form-control form_control" name="sm_linkedin" value="{{ $social->sm_linkedin }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-dribbble"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_dribbble">
+                                <input type="text" class="form-control form_control" name="sm_dribbble" value="{{ $social->sm_dribbble }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-youtube"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_youtube">
+                                <input type="text" class="form-control form_control" name="sm_youtube" value="{{ $social->sm_youtube }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-slack"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_slack">
+                                <input type="text" class="form-control form_control" name="sm_slack" value="{{ $social->sm_slack }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-instagram"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_instagram">
+                                <input type="text" class="form-control form_control" name="sm_instagram" value="{{ $social->sm_instagram }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-behance"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_behance">
+                                <input type="text" class="form-control form_control" name="sm_behance" value="{{ $social->sm_behance }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-google"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_google">
+                                <input type="text" class="form-control form_control" name="sm_google" value="{{ $social->sm_google }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fab fa-reddit-alien"></i></span>
-                                <input type="text" class="form-control form_control" name="sm_raddit">
+                                <input type="text" class="form-control form_control" name="sm_raddit" value="{{ $social->sm_raddit }}">
                             </div>
                         </div>
 

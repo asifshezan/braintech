@@ -7,8 +7,7 @@
         <div class="card-header card_header bg-dark">
           <div class="row">
             <div class="col-md-8 card_header_title">
-              <i class="fab fa-gg-circle"></i>All User Information
-            </div>
+              <i class="fab fa-gg-circle"></i>All User Information</div>
             <div class="col-md-4 card_header_btn">
               <a class="btn btn-sm btn-secondary chb_btn" href="{{url('dashboard/user/add')}}"><i class="fas fa-plus-circle"></i> Add User</a>
             </div>

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="zxx">
   <head>
+      @php
+          $basic = App\Models\Basic::where('basic_id',1)->where('basic_status',1)->firstOrFail();
+          $contact = App\Models\ContactInformation::where('cont_id',1)->where('cont_status',1)->firstOrFail();
+          $social = App\Models\SocialMedia::where('sm_id',1)->where('sm_status',1)->firstOrFail();
+      @endphp
     <meta charset="utf-8">
-    <title>Braintech - IT Solutions and Technology Startup HTML Template</title>
+    <title>{{ $basic->basic_company .'-'. $basic->basic_title }}</title>
     <meta name="description" content="">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.html">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('contents/website')}}/images/fav.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('uploads/basics/'. $basic->basic_favicon ) }}">
     <link rel="stylesheet" type="text/css" href="{{asset('contents/website')}}/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('contents/website')}}/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('contents/website')}}/fonts/flaticon.css">
@@ -42,7 +47,7 @@
                         <div class="row rs-vertical-middle">
                             <div class="col-lg-2">
                                 <div class="logo-part">
-                                    <a href="index.html"><img src="{{asset('contents/website')}}/images/logo-dark.png" alt=""></a>
+                                    <a href="index.html"><img src="{{asset('uploads/basics/'.$basic->basic_logo)}}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-10 text-right">
@@ -51,21 +56,21 @@
                                         <i class="flaticon-location"></i>
                                         <span class="contact-info">
                                             <span>Address</span>
-                                            05 kandi BR. New York
+                                            {{ $contact ->cont_add1 }}
                                         </span>
                                     </li>
                                     <li class="contact-part">
                                         <i class="flaticon-email"></i>
                                         <span class="contact-info">
                                             <span>E-mail</span>
-                                            <a href="#"> support@rstheme.com</a>
+                                            <a href="mailto:{{ $contact->cont_email1 }}"> {{ $contact->cont_email1 }}</a>
                                         </span>
                                     </li>
                                     <li class="contact-part no-border">
                                          <i class="flaticon-call"></i>
                                         <span class="contact-info">
                                             <span>Phone</span>
-                                             +019988772
+                                             {{ $contact->cont_phone1 }}
                                         </span>
                                     </li>
                                 </ul>
@@ -80,14 +85,14 @@
                     <div class="container">
                         <div class="logo-area">
                             <a href="{{ url('/') }}">
-                                <img class="sticky-logo" src="{{asset('contents/website')}}/images/logo-dark.png" alt="logo">
+                                <img class="sticky-logo" src="{{asset('uploads/basics/'.$basic->basic_logo)}}" alt="logo">
                             </a>
                         </div>
                         <div class="rs-menu-area">
                             <div class="main-menu">
                                 <div class="mobile-menu">
                                     <a href="index.html" class="mobile-logo">
-                                        <img src="{{asset('contents/website')}}/images/logo-light.png" alt="logo">
+                                        <img src="{{asset('uploads/basics/'.$basic->basic_logo)}}" alt="logo">
                                     </a>
                                     <a href="#" class="rs-menu-toggle rs-menu-toggle-close">
                                         <i class="fa fa-bars"></i>
@@ -130,10 +135,10 @@
                             </ul>
                             <div class="toolbar-sl-share">
                                 <ul class="social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="{{ $social->sm_facebook }}"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="{{ $social->sm_twitter }}"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="{{ $social->sm_youtube }}"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="{{ $social->sm_instagram }}"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -156,36 +161,36 @@
               <div class="col-lg-3 col-md-12 col-sm-12 footer-widget">
                 <div class="footer-logo mb-30">
                   <a href="index.html">
-                    <img src="{{asset('contents/website')}}/images/logo-dark.png" alt="">
+                    <img src="{{asset('uploads/basics/'.$basic->basic_flogo)}}" alt="">
                   </a>
                 </div>
                 <div class="textwidget pb-30">
-                  <p>Sedut perspiciatis unde omnis iste natus error sitlutem acc usantium doloremque denounce with illo inventore veritatis</p>
+                  <p>{{ $basic->basic_title }}</p>
                 </div>
                 <ul class="footer-social md-mb-30">
                   <li>
-                    <a href="#" target="_blank">
+                    <a href="{{ $social->sm_facebook }}" target="_blank">
                       <span>
                         <i class="fa fa-facebook"></i>
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="# " target="_blank">
+                    <a href="{{ $social->sm_twitter }}" target="_blank">
                       <span>
                         <i class="fa fa-twitter"></i>
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="# " target="_blank">
+                    <a href="{{ $social->sm_google }}" target="_blank">
                       <span>
-                        <i class="fa fa-pinterest-p"></i>
+                        <i class="fa fa-google"></i>
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="# " target="_blank">
+                    <a href="{{ $social->sm_instagram}}" target="_blank">
                       <span>
                         <i class="fa fa-instagram"></i>
                       </span>
@@ -218,18 +223,18 @@
                 <ul class="address-widget">
                   <li>
                     <i class="flaticon-location"></i>
-                    <div class="desc">374 FA Tower, William S Blvd 2721, IL, USA</div>
+                    <div class="desc">{{ $contact->cont_add1 }}</div>
                   </li>
                   <li>
                     <i class="flaticon-call"></i>
                     <div class="desc">
-                      <a href="tel:(+880)155-69569">(+880)155-69569</a>
+                      <a href="tel:{{ $contact->cont_phone1 }}">{{ $contact->cont_phone1 }}</a>
                     </div>
                   </li>
                   <li>
                     <i class="flaticon-email"></i>
                     <div class="desc">
-                      <a href="mailto:support@rstheme.com">support@rstheme.com</a>
+                      <a href="mailto:{{ $contact->cont_email1 }}">{{ $contact->cont_email1 }}</a>
                     </div>
                   </li>
                   <li>
@@ -243,9 +248,9 @@
                 <p class="widget-desc">We denounce with righteous and in and dislike men who are so beguiled and demo realized.</p>
                 <p>
                   <input type="email" name="EMAIL" placeholder="Your email address" required="">
-                  <em class="paper-plane">
+                  <button class="paper-plane">
                     <input type="submit" value="Sign up">
-                  </em>
+                  </button>
                   <i class="flaticon-send"></i>
                 </p>
               </div>
