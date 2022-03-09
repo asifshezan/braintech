@@ -60,35 +60,35 @@
 
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/partner') }}" class="sidebar-link">
-                            <i class="fas fa-user" data-feather="fa-user"></i>
+                            <i class="fas fa-user"></i>
                             <span class="align-middle">Partner</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/testimonial') }}" class="sidebar-link">
-                            <i class="fas fa-vial" data-feather="fa-vial"></i>
+                            <i class="fas fa-vial"></i>
                             <span class="align-middle">Testimonial</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/service') }}" class="sidebar-link">
-                            <i class="fas fa-sliders" data-feather="fa-sliders"></i>
+                            <i class="fas fa-sliders"></i>
                             <span class="align-middle">Service</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/teammember')}}" class="sidebar-link">
-                            <i class="fas fa-user-secret" data-feather=""></i>
+                            <i class="fas fa-user-secret"></i>
                             <span class="align-middle">Team Member</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/client') }}" class="sidebar-link">
-                            <i class="fas fa-person" data-feather=""></i>
+                            <i class="fas fa-person"></i>
                             <span class="align-middle">Client</span>
                         </a>
                     </li>
@@ -113,13 +113,13 @@
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/contact-message') }}" class="sidebar-link">
-                            <i class="fas fa-person" data-feather=""></i>
+                            <i class="fas fa-person"></i>
                             <span class="align-middle">Contact Message</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/newsletter') }}" class="sidebar-link">
-                            <i class="fas fa-person" data-feather=""></i>
+                            <i class="fas fa-person"></i>
                             <span class="align-middle">Newsletter</span>
                         </a>
                     </li>
