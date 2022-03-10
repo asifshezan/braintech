@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\GalleryCategoryController;
 use App\Http\Controllers\Admin\ManageController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\NewsletterController;
+use App\Http\Controllers\Admin\ContentController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Website\WebsiteController;
 
 use App\Models\Admin;
@@ -164,6 +166,29 @@ Route::get('dashboard/contactmessage/delete',[ContactMessageController::class, '
 Route::get('dashboard/newsletter',[NewsletterController::class, 'index']);
 Route::get('dashboard/newsletter/view',[NewsletterController::class, 'view']);
 Route::get('dashboard/newsletter/delete',[NewsletterController::class, 'delete']);
+
+
+Route::get('dashboard/content',[ContentController::class, 'index']);
+Route::get('dashboard/content/add',[ContentController::class, 'addd']);
+Route::get('dashboard/content/edit',[ContentController::class, 'edit']);
+Route::get('dashboard/content/view',[ContentController::class, 'view']);
+Route::post('dashboard/content/submit',[ContentController::class, 'insert']);
+Route::post('dashboard/content/update',[ContentController::class, 'update']);
+Route::post('dashboard/content/softdelete',[ContentController::class, 'softdelete']);
+Route::post('dashboard/content/restore',[ContentController::class, 'restore']);
+Route::post('dashboard/content/delete',[ContentController::class, 'delete']);
+
+
+Route::get('dashboard/page',[PageController::class, 'index']);
+Route::get('dashboard/page/add',[PageController::class, 'addd']);
+Route::get('dashboard/page/edit',[PageController::class, 'edit']);
+Route::get('dashboard/page/view',[PageController::class, 'view']);
+Route::post('dashboard/page/submit',[PageController::class, 'insert']);
+Route::post('dashboard/page/update',[PageController::class, 'update']);
+Route::post('dashboard/page/softdelete',[PageController::class, 'softdelete']);
+Route::post('dashboard/page/restore',[PageController::class, 'restore']);
+Route::post('dashboard/page/delete',[PageController::class, 'delete']);
+
 
 
 Route::get('dashboard/recycle',[RecycleController::class, 'index']);

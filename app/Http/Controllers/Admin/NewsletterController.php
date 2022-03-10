@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
-use Intervention\Image\ImageManagerStatic as Image;
+
 
 class NewsletterController extends Controller
 {
@@ -19,7 +18,7 @@ class NewsletterController extends Controller
     }
 
     public function index(){
-        $rol = Newsletter::where('ns_status',1)->orderBy('ns_id','DESC')->get();
-        return view('admin.newsletter.all', compact('rol'));
+        $news = Newsletter::where('ns_status',1)->orderBy('ns_id','DESC')->get();
+        return view('admin.newsletter.all', compact('news'));
     }
 }

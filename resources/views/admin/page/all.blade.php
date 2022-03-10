@@ -7,7 +7,10 @@
         <div class="card-header card_header bg-dark">
           <div class="row">
             <div class="col-md-8 card_header_title">
-              <i class="fab fa-gg-circle"></i>All Contact Message Information</div>
+              <i class="fab fa-gg-circle"></i>All Page Information</div>
+            <div class="col-md-4 card_header_btn">
+              <a class="btn btn-sm btn-secondary chb_btn" href="{{ url('dashboard/page/add') }}"><i class="fas fa-plus-circle"></i> Add Page</a>
+            </div>
           </div>
         </div>
         <div class="card-body card_body">
@@ -16,26 +19,27 @@
               <table id="allDataTable" class="table table-bordered table-striped table-hover custom_table">
                 <thead class="table-dark">
                   <tr>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
+                    <th>Page</th>
+                    <th>URL</th>
+                    <th>Order By</th>
                     <th>Manage</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($all as $data)
                   <tr>
-                    <td>{{$data->cm_name}}</td>
-                    <td>{{$data->cm_phone}}</td>
-                    <td>{{$data->cm_email}}</td>
+                    <td>{{ $data->team_name }}</td>
+                    <td>{{ $data->team_designation }}</td>
+                    <td>{{ $data->team_order }}</td>
                     <td>
                       <div class="btn-group">
   						<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Manage
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('dashboard/contactmessage/view/'.$data->cm_id)}}">View</a>
-                            <a class="dropdown-item" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->cm_id}}">Delete</a>
+                                <a class="dropdown-item" href="{{ url('dashboard/page/view/'.$data->page_slug) }}">View</a>
+                                <a class="dropdown-item" href="{{ url('dashboard/page/edit/'.$data->page_slug) }}">Edit</a>
+                                <a class="dropdown-item" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{ $data->page_id }}">Delete</a>
                         </div>
                     </div>
                     </td>
@@ -58,11 +62,11 @@
 </div>
 <div class="modal fade" id="softDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="post" action="{{url('dashboard/contactmessage/softdelete')}}">
+    <form method="post" action="{{url('dashboard/page/softdelete')}}">
       @csrf
       <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id=""><i class="fab fa-gg-circle"></i> Confirm Message</h5>
+        <h5 class="modal-title"><i class="fab fa-gg-circle"></i> Confirm Message</h5>
       </div>
       <div class="modal-body modal_body">
         Are you want to sure delete data?

@@ -7,11 +7,9 @@
         <div class="card-header card_header bg-dark">
           <div class="row">
             <div class="col-md-8 card_header_title">
-              <i class="fab fa-gg-circle"></i>All Role Information
+              <i class="fab fa-gg-circle"></i>All Newsletter Information
             </div>
-            <div class="col-md-4 card_header_btn">
-              <a class="btn btn-sm btn-secondary chb_btn" href="{{ url('dashboard/role/add') }}"><i class="fas fa-plus-circle"></i> Add Role</a>
-            </div>
+
           </div>
         </div>
         <div class="card-body card_body">
@@ -20,17 +18,17 @@
               <table id="allDataTable" class="table table-bordered table-striped table-hover custom_table">
                 <thead class="table-dark">
                   <tr>
-                    <th>Role Name</th>
+                    <th>Email</th>
                     <th>Status</th>
                     <th>Manage</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($rol as $data)
+                  @foreach($news as $data)
                   <tr>
-                    <td>{{ $data->role_name }}</td>
+                    <td>{{ $data->ns_email }}</td>
                     <td>
-                        @if ($data->role_status==1)
+                        @if ($data->ns_status === 1)
                         <span class="badge rounded-pill bg-success">Active</span>
                         @else
                         <span class="badge rounded-pill bg-warning text-dark">Warning</span>
@@ -40,9 +38,8 @@
                       <div class="btn-group">
   					<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</button>
                         <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ url('dashboard/role/view/'.$data->role_id) }}">View</a>
-                                <a class="dropdown-item" href="{{ url('dashboard/role/edit/'.$data->role_id) }}">Edit</a>
-                                <a class="dropdown-item" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->role_id}}">Delete</a>
+                                <a class="dropdown-item" href="{{ url('dashboard/newsletter/view/'.$data->ns_id) }}">View</a>
+                                <a class="dropdown-item" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->ns_id}}">Delete</a>
                         </div>
                     </div>
                     </td>
@@ -65,7 +62,7 @@
 </div>
 <div class="modal fade" id="softDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="post" action="{{url('dashboard/role/softdelete')}}">
+    <form method="post" action="{{url('dashboard/newsletter/softdelete')}}">
       @csrf
       <div class="modal-content">
       <div class="modal-header">

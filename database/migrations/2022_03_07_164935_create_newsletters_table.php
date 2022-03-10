@@ -15,6 +15,7 @@ class CreateNewslettersTable extends Migration
     {
         Schema::create('newsletters', function (Blueprint $table) {
             $table->bigIncrements('ns_id');
+            $table->string('ns_email')->nullable();
             $table->integer('ns_editor')->nullable();
             $table->string('ns_slug')->nullable();
             $table->integer('ns_status')->default(1);
