@@ -53,6 +53,7 @@ class BannerController extends Controller
         $insert = Banner::insertGetId([
             'ban_title' => $request['ban_title'],
             'ban_subtitle' => $request['ban_subtitle'],
+            'ban_text' => $request['ban_text'],
             'ban_button' => $request['ban_button'],
             'ban_url' => $request['ban_url'],
             'ban_order' => $request['ban_order'],
@@ -66,7 +67,7 @@ class BannerController extends Controller
         if($request->hasFile('pic')){
             $image = $request->file('pic');
             $imageName = $insert.time().'_'.rand(1000,2000).'.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(200,200)->save('uploads/banners/'.$imageName);
+            Image::make($image)->save('uploads/banners/'.$imageName);
 
             Banner::where('ban_id',$insert)->update([
                 'ban_image' => $imageName,
@@ -97,6 +98,7 @@ class BannerController extends Controller
         $update = Banner::where('ban_id', $ban_id)->update([
             'ban_title' => $request['ban_title'],
             'ban_subtitle' => $request['ban_subtitle'],
+            'ban_text' => $request['ban_text'],
             'ban_button' => $request['ban_button'],
             'ban_url' => $request['ban_url'],
             'ban_order' => $request['ban_order'],
@@ -106,12 +108,12 @@ class BannerController extends Controller
 
         if($request->hasFile('pic')){
             $image = $request->file('pic');
-            $imageName = $ban_id . time() . '_' . rand(1000,2000) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(200,200)->save('uploads/banners/'.$imageName);
+            $imageName = $ban_id . time().'_'.rand(1000,2000).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->save('uploads/banners/'.$imageName);
 
-            Banner::where('ban_id', $ban_id)->update([
+            Banner::where('ban_id',$ban_id)->update([
                 'ban_image' => $imageName,
-                'updated_at' => Carbon::now()->toDateTimeString(),
+                'created_at' => Carbon::now()->toDateTimeString(),
             ]);
         }
 

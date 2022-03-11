@@ -17,6 +17,7 @@ class CreateBannersTable extends Migration
             $table->bigIncrements('ban_id');
             $table->string('ban_title',200)->nullable();
             $table->string('ban_subtitle',100)->nullable();
+            $table->string('ban_text',150)->nullable();
             $table->string('ban_button',30)->nullable();
             $table->string('ban_url',50)->nullable();
             $table->integer('ban_order')->nullable();

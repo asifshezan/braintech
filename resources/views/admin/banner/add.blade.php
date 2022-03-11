@@ -43,6 +43,15 @@
               @endif
             </div>
           </div>
+          <div class="row mb-3 {{ $errors->has('ban_text') ? 'has-error':''}}">
+            <label class="col-sm-3 col-form-label col_form_label">Text:</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control form_control" name="ban_text" value="{{ old('ban_text') }}">
+              @if ($errors->has('ban_text'))
+                  <span class="error">{{ $errors->first('ban_text') }}</span>
+              @endif
+            </div>
+          </div>
           <div class="row mb-3 {{$errors->has('ban_button') ? ' has-error':''}}">
             <label class="col-sm-3 col-form-label col_form_label">Button<span class="req_star">*</span>:</label>
             <div class="col-sm-7">

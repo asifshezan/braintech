@@ -42,6 +42,12 @@
                 <input type="text" class="form-control form_control" name="ban_subtitle" value="{{ $data->ban_subtitle }}">
               </div>
             </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label col_form_label">Banner Text:</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control form_control" name="ban_text" value="{{ $data->ban_text }}">
+                </div>
+              </div>
             <div class="row mb-3 {{$errors->has('ban_button') ? 'has-error':''}}">
               <label class="col-sm-3 col-form-label col_form_label">Banner Button<span class="req_star">*</span>:</label>
               <div class="col-sm-7">

@@ -21,4 +21,5 @@ class NewsletterController extends Controller
         $news = Newsletter::where('ns_status',1)->orderBy('ns_id','DESC')->get();
         return view('admin.newsletter.all', compact('news'));
     }
+
 }

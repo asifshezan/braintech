@@ -22,6 +22,7 @@
                   <tr>
                     <th>Title</th>
                     <th>SubTitle</th>
+                    <th>Text</th>
                     <th>Button</th>
                     <th>URL</th>
                     <th>Order By</th>
@@ -34,6 +35,7 @@
                   <tr>
                     <td>{{ $data->ban_title }}</td>
                     <td>{{ $data->ban_subtitle }}</td>
+                    <td>{{ $data->ban_text }}</td>
                     <td>{{ $data->ban_button }}</td>
                     <td>{{ $data->ban_url }}</td>
                     <td>{{ $data->ban_order }}</td>

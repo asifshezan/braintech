@@ -32,6 +32,7 @@ Route::get('our-team',[WebsiteController::class, 'team'])->name('website.our-tea
 Route::get('case-studies',[WebsiteController::class, 'case'])->name('website.case-studies');
 Route::get('blog',[WebsiteController::class, 'blog'])->name('website.blog');
 Route::get('contact',[WebsiteController::class, 'contact'])->name('website.contact');
+Route::post('newsletter',[WebsiteController::class, 'newsletter'])->name('website.newsletter');
 
 // Admin Panel Routes Start
 Route::get('dashboard',[AdminController::class, 'index']);
@@ -164,6 +165,7 @@ Route::get('dashboard/contactmessage/delete',[ContactMessageController::class, '
 
 
 Route::get('dashboard/newsletter',[NewsletterController::class, 'index']);
+Route::post('dashboard/newsletter/submit',[NewsletterController::class, 'insert']);
 Route::get('dashboard/newsletter/view',[NewsletterController::class, 'view']);
 Route::get('dashboard/newsletter/delete',[NewsletterController::class, 'delete']);
 
