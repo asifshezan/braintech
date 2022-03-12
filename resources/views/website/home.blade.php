@@ -5,7 +5,7 @@
             <div class="rs-slider style1">
                 <div class="rs-carousel owl-carousel" data-loop="true" data-items="1" data-margin="0" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="1" data-md-device-nav="true" data-md-device-dots="false">
                     @php
-                    $banners = App\Models\Banner::where('ban_status',1)->orderBy('ban_order','DESC')->get();
+                    $banners = App\Models\Banner::where('ban_status',1)->orderBy('ban_order','DESC')->limit(2)->get();
                     @endphp
                     @foreach ($banners as $key => $banner)
                     <div class="slider-content slide{{ $key }}"  style="background-image: url('{{ asset('uploads/banners/' . $banner['ban_image']) }}')">
@@ -23,92 +23,38 @@
                         </div>
                     </div>
                     @endforeach
-
-
                 </div>
             </div>
             <!-- Slider Section End -->
 
             <!-- Services Section Start -->
+            @php
+                $services = App\Models\Service::where('service_status',1)->orderBy('service_order','ASC')->limit(4)->get();
+            @endphp
             <div class="rs-services main-home style1 pt-100 md-pt-70">
                 <div class="container">
                     <div class="row">
+                        @foreach ($services as $service)
                         <div class="col-lg-3 col-md-6 md-mb-30">
-                           <div class="services-item">
-                               <div class="services-icon">
-                                   <div class="image-part">
-                                       <img src="{{ asset('contents/website')}}/images/services/style1/1.png" alt="">
-                                   </div>
-                               </div>
-                               <div class="services-content">
-                                   <div class="services-text">
-                                       <h3 class="services-title"><a href="web-development.html">IT Management</a></h3>
-                                   </div>
-                                   <div class="services-desc">
-                                       <p>
-                                          Quisque placerat vitae lacus ut scelerisque fusce luctus odio ac nibh luctu.
-                                       </p>
-                                   </div>
-                               </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 md-mb-30">
-                           <div class="services-item">
-                               <div class="services-icon">
-                                   <div class="image-part">
-                                       <img src="{{ asset('contents/website')}}/images/services/style1/2.png" alt="">
-                                   </div>
-                               </div>
-                               <div class="services-content">
-                                   <div class="services-text">
-                                       <h3 class="services-title"><a href="web-development.html">Cloud Services</a></h3>
-                                   </div>
-                                   <div class="services-desc">
-                                       <p>
-                                          Quisque placerat vitae lacus ut scelerisque fusce luctus odio ac nibh luctu.
-                                       </p>
-                                   </div>
-                               </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 sm-mb-30">
-                           <div class="services-item">
-                               <div class="services-icon">
-                                   <div class="image-part">
-                                       <img src="{{ asset('contents/website')}}/images/services/style1/3.png" alt="">
-                                   </div>
-                               </div>
-                               <div class="services-content">
-                                   <div class="services-text">
-                                       <h3 class="services-title"><a href="web-development.html">Data Security</a></h3>
-                                   </div>
-                                   <div class="services-desc">
-                                       <p>
-                                         Quisque placerat vitae lacus ut scelerisque fusce luctus odio ac nibh luctu.
-                                       </p>
-                                   </div>
-                               </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <div class="services-item">
-                               <div class="services-icon">
-                                   <div class="image-part">
-                                       <img src="{{ asset('contents/website')}}/images/services/style1/4.png" alt="">
-                                   </div>
-                               </div>
-                               <div class="services-content">
-                                   <div class="services-text">
-                                       <h3 class="services-title"><a href="web-development.html">Machine Learning</a></h3>
-                                   </div>
-                                   <div class="services-desc">
-                                       <p>
-                                          Quisque placerat vitae lacus ut scelerisque fusce luctus odio ac nibh luctu.
-                                       </p>
-                                   </div>
-                               </div>
-                           </div>
-                        </div>
+                            <div class="services-item">
+                                <div class="services-icon">
+                                    <div class="image-part">
+                                        <img src="{{ asset('uploads/services/'. $service->service_image)}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="services-content">
+                                    <div class="services-text">
+                                        <h3 class="services-title"><a href="web-development.html">{{ $service->service_title }}</a></h3>
+                                    </div>
+                                    <div class="services-desc">
+                                        <p>
+                                           {{ $service->service_subtitle }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
