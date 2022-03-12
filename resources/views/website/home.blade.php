@@ -103,90 +103,30 @@
                         </h2>
                     </div>
                 </div>
+                @php
+                $service_2 = App\Models\Service::where('service_status',1)->orderBy('service_order','DESC')->limit(6)->get();
+            @endphp
                 <div class="bg-section pb-120 md-pb-80">
                     <div class="container">
                         <div class="row gray-color pb-35 pl-25 pr-25 md-pl-0 md-pr-0">
+                            @foreach ($service_2 as $ser_2)
                             <div class="col-lg-4 col-md-6 mb-20">
                                 <div class="services-item">
                                     <div class="services-icon">
-                                        <img src="{{ asset('contents/website')}}/images/services/main-home/icons/1.png" alt="">
+                                        <img src="{{ asset('uploads/services/'.$ser_2->service_image)}}" alt="">
                                     </div>
                                     <div class="services-content">
-                                        <h2 class="title"><a href="software-development.html">Software Development</a></h2>
+                                        <h2 class="title"><a href="web-development.html">{{ $ser_2->service_title }}</a></h2>
                                         <p class="desc">
-                                            At vero eos et accusamus etiusto odio praesentium accusamus etiusto odio data center.
+                                            {{ $ser_2->service_details }}
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 mb-20">
-                                <div class="services-item">
-                                    <div class="services-icon">
-                                        <img src="{{ asset('contents/website')}}/images/services/main-home/icons/2.png" alt="">
-                                    </div>
-                                    <div class="services-content">
-                                        <h2 class="title"><a href="web-development.html">Web Development</a></h2>
-                                        <p class="desc">
-                                            At vero eos et accusamus etiusto odio praesentium accusamus etiusto odio data center.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 mb-20">
-                                <div class="services-item">
-                                    <div class="services-icon">
-                                        <img src="{{ asset('contents/website')}}/images/services/main-home/icons/3.png" alt="">
-                                    </div>
-                                    <div class="services-content">
-                                        <h2 class="title"><a href="analytic-solutions.html">Analytic Solutions</a></h2>
-                                        <p class="desc">
-                                            At vero eos et accusamus etiusto odio praesentium accusamus etiusto odio data center.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 md-mb-20">
-                                <div class="services-item">
-                                    <div class="services-icon">
-                                        <img src="{{ asset('contents/website')}}/images/services/main-home/icons/4.png" alt="">
-                                    </div>
-                                    <div class="services-content">
-                                        <h2 class="title"><a href="cloud-and-devops.html">Clould & DevOps</a></h2>
-                                        <p class="desc">
-                                            At vero eos et accusamus etiusto odio praesentium accusamus etiusto odio data center.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 sm-mb-20">
-                                <div class="services-item">
-                                    <div class="services-icon">
-                                        <img src="{{ asset('contents/website')}}/images/services/main-home/icons/5.png" alt="">
-                                    </div>
-                                    <div class="services-content">
-                                        <h2 class="title"><a href="product-design.html">Product & Design</a></h2>
-                                        <p class="desc">
-                                            At vero eos et accusamus etiusto odio praesentium accusamus etiusto odio data center.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="services-item">
-                                    <div class="services-icon">
-                                        <img src="{{ asset('contents/website')}}/images/services/main-home/icons/6.png" alt="">
-                                    </div>
-                                    <div class="services-content">
-                                        <h2 class="title"><a href="data-center.html">Data Center</a></h2>
-                                        <p class="desc">
-                                            At vero eos et accusamus etiusto odio praesentium accusamus etiusto odio data center.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="btn-part text-center mt-65">
-                            <a class="readon learn-more contact-us" href="web-development.html">View All Services</a>
+                            <a class="readon learn-more contact-us" href="{{ url('services')}}">View All Services</a>
                         </div>
                     </div>
                     <div class="shape-part">
@@ -418,109 +358,12 @@
             </div>
             <!-- Project Section End -->
 
-            <!-- Pricing section start -->
-            <div class="rs-pricing white-bg pt-255 pb-150 md-pb-80">
-                <div class="container">
-                    <div class="sec-title2 text-center mb-45">
-                        <span class="sub-text">Pricing</span>
-                        <h2 class="title">
-                           Our Pricing Plan
-                        </h2>
-                        <div class="heading-line">
 
-                        </div>
-                    </div>
-                   <div class="row">
-                       <div class="col-lg-4 md-mb-50">
-                           <div class="pricing-table new-style">
-                               <div class="pricing-badge">
-                                   Silver
-                               </div>
-                               <div class="pricing-icon">
-                                   <img src="{{ asset('contents/website')}}/images/pricing/main-home/icons/1.png" alt="">
-                               </div>
-                               <div class="pricing-table-price">
-                                    <div class="pricing-table-bags">
-                                        <span class="pricing-currency">$</span>
-                                        <span class="table-price-text">29.99</span>
-                                        <span class="table-period">Monthly Package</span>
-                                    </div>
-                               </div>
-                               <div class="pricing-table-body">
-                                   <ul>
-                                       <li><i class="fa fa-check"></i><span>Powerful Admin Panel</span></li>
-                                       <li><i class="fa fa-check"></i><span>1 Native Android App</span></li>
-                                       <li><i class="fa fa-close"></i><span>Multi-Language Support</span></li>
-                                       <li><i class="fa fa-check"></i><span>Support via E-mail and Phone</span></li>
-                                   </ul>
-                               </div>
-                               <div class="btn-part">
-                                   <a class="readon buy-now" href="single-team.html">Buy Now</a>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="col-lg-4 md-mb-50">
-                           <div class="pricing-table primary-bg">
-                               <div class="pricing-badge white-color-bg">
-                                   Gold
-                               </div>
-                               <div class="pricing-icon">
-                                   <img src="{{ asset('contents/website')}}/images/pricing/main-home/icons/2.png" alt="">
-                               </div>
-                              <div class="pricing-table-price">
-                                   <div class="pricing-table-bags">
-                                       <span class="pricing-currency">$</span>
-                                       <span class="table-price-text">39.99</span>
-                                       <span class="table-period">Monthly Package</span>
-                                   </div>
-                              </div>
-                               <div class="pricing-table-body">
-                                   <ul>
-                                        <li><i class="fa fa-check"></i><span>Powerful Admin Panel</span></li>
-                                        <li><i class="fa fa-check"></i><span>2 Native Android App</span></li>
-                                        <li><i class="fa fa-check"></i><span>Multi-Language Support</span></li>
-                                        <li><i class="fa fa-check"></i><span>Support via E-mail and Phone</span></li>
-                                   </ul>
-                               </div>
-                               <div class="btn-part">
-                                   <a class="readon buy-now" href="single-team.html">Buy Now</a>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="col-lg-4">
-                           <div class="pricing-table new-style">
-                               <div class="pricing-badge">
-                                   Platinum
-                               </div>
-                               <div class="pricing-icon">
-                                   <img src="{{ asset('contents/website')}}/images/pricing/main-home/icons/3.png" alt="">
-                               </div>
-                                <div class="pricing-table-price">
-                                     <div class="pricing-table-bags">
-                                         <span class="pricing-currency">$</span>
-                                         <span class="table-price-text">79.99</span>
-                                         <span class="table-period">Monthly Package</span>
-                                     </div>
-                                </div>
-                               <div class="pricing-table-body">
-                                   <ul>
-                                        <li><i class="fa fa-check"></i><span>Powerful Admin Panel</span></li>
-                                        <li><i class="fa fa-check"></i><span>3 Native Android App</span></li>
-                                        <li><i class="fa fa-check"></i><span>Multi-Language Support</span></li>
-                                        <li><i class="fa fa-check"></i><span>Support via E-mail and Phone</span></li>
-                                   </ul>
-                               </div>
-                               <div class="btn-part">
-                                   <a class="readon buy-now" href="single-team.html">Buy Now</a>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                </div>
-            </div>
-            <!-- Pricing section end -->
 
             <!-- Testimonial Section Start -->
+            @php
+            $testimonial = App\Models\Testimonial::where('test_status',1)->orderBy('test_order','DESC')->limit(4)->get();
+        @endphp
             <div class="rs-testimonial main-home style2 bg5 pt-120 pb-120 md-pt-80 md-pb-80">
                 <div class="container">
                   <div class="sec-title2 text-center mb-45">
@@ -557,102 +400,21 @@
                         data-mobile-device="1"
                         data-mobile-device-nav="false"
                         data-mobile-device-dots="false">
+
+                        @foreach ($testimonial as $testi )
                         <div class="testi-item">
                             <div class="author-desc">
-                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</div>
+                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">{{ $testi->test_feedback}}</div>
                                 <div class="author-img">
-                                    <img src="{{ asset('contents/website')}}/images/testimonial/main-home/1.jpg" alt="">
+                                    <img src="{{ asset('uploads/testimonials/'.$testi->test_image) }}" alt="">
                                 </div>
                             </div>
                             <div class="author-part">
-                                <a class="name" href="#">Mariya Khan</a>
-                                <span class="designation">CEO, Brick Consulting</span>
+                                <a class="name" href="#">{{ $testi->test_name }}</a>
+                                <span class="designation">{{ $testi->test_designation }}</span>
                             </div>
                         </div>
-                        <div class="testi-item">
-                            <div class="author-desc">
-                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</div>
-                                <div class="author-img">
-                                    <img src="{{ asset('contents/website')}}/images/testimonial/main-home/2.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="author-part">
-                                <a class="name" href="#">Sonia Akhter</a>
-                                <span class="designation">Graphic Designer</span>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="author-desc">
-                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</div>
-                                <div class="author-img">
-                                    <img src="{{ asset('contents/website')}}/images/testimonial/main-home/3.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="author-part">
-                                <a class="name" href="#">Deluar Hossen</a>
-                                <span class="designation">Web Developer</span>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="author-desc">
-                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</div>
-                                <div class="author-img">
-                                    <img src="{{ asset('contents/website')}}/images/testimonial/main-home/4.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="author-part">
-                                <a class="name" href="#">Asif Ahmed</a>
-                                <span class="designation">App Developer</span>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="author-desc">
-                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</div>
-                                <div class="author-img">
-                                    <img src="{{ asset('contents/website')}}/images/testimonial/main-home/1.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="author-part">
-                                <a class="name" href="#">Mariya Khan</a>
-                                <span class="designation">CEO, Brick Consulting</span>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="author-desc">
-                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</div>
-                                <div class="author-img">
-                                    <img src="{{ asset('contents/website')}}/images/testimonial/main-home/2.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="author-part">
-                                <a class="name" href="#">Sonia Akhter</a>
-                                <span class="designation">Graphic Designer</span>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="author-desc">
-                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</div>
-                                <div class="author-img">
-                                    <img src="{{ asset('contents/website')}}/images/testimonial/main-home/3.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="author-part">
-                                <a class="name" href="#">Deluar Hossen</a>
-                                <span class="designation">Web Developer</span>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="author-desc">
-                                <div class="desc"><img class="quote" src="{{ asset('contents/website')}}/images/testimonial/main-home/quote-white.png" alt="">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</div>
-                                <div class="author-img">
-                                    <img src="{{ asset('contents/website')}}/images/testimonial/main-home/4.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="author-part">
-                                <a class="name" href="#">Asif Ahmed</a>
-                                <span class="designation">App Developer</span>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
