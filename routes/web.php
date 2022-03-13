@@ -73,8 +73,8 @@ Route::post('dashboard/role/delete',[RoleController::class, 'delete']);
 
 Route::get('dashboard/partner',[PartnerController::class, 'index']);
 Route::get('dashboard/partner/add',[PartnerController::class, 'add']);
-Route::get('dashboard/partner/edit/{partner_id}',[PartnerController::class, 'edit']);
-Route::get('dashboard/partner/view/{partner_id}',[PartnerController::class, 'view']);
+Route::get('dashboard/partner/edit/{slug}',[PartnerController::class, 'edit']);
+Route::get('dashboard/partner/view/{slug}',[PartnerController::class, 'view']);
 Route::post('dashboard/partner/submit',[PartnerController::class, 'insert']);
 Route::post('dashboard/partner/update',[PartnerController::class, 'update']);
 Route::post('dashboard/partner/softdelete',[PartnerController::class, 'softdelete']);
@@ -91,6 +91,7 @@ Route::post('dashboard/testimonial/update',[TestimonialController::class, 'updat
 Route::post('dashboard/testimonial/softdelete',[TestimonialController::class, 'softdelete']);
 Route::post('dashboard/testimonial/restore',[TestimonialController::class, 'restore']);
 Route::post('dashboard/testimonial/delete',[TestimonialController::class, 'delete']);
+
 
 
 Route::get('dashboard/client',[ClientController::class, 'index']);

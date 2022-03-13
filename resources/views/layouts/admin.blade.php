@@ -64,17 +64,26 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a href="{{ url('dashboard/partner') }}" class="sidebar-link">
-                            <i class="fas fa-user"></i>
-                            <span class="align-middle">Partner</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
                         <a href="{{ url('dashboard/testimonial') }}" class="sidebar-link">
                             <i class="fas fa-vial"></i>
                             <span class="align-middle">Testimonial</span>
                         </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#sidebarManage" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="fab fa-accusoft"></i>
+                            <span class="align-middle">Partner</span>
+                        </a>
+                        <ul id="sidebarManage" class="sidebar-dropdown list-unstyled collapse"
+                            data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/partner') }}">All Partners</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/partner/add') }}">Add Partner</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="sidebar-item">

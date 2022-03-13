@@ -20,7 +20,7 @@ class PartnerController extends Controller
 
     public function index()
     {
-      $all = Partner::where('partner_status',1)->orderBy('Partner_id','DESC')->get();
+      $all = Partner::where('partner_status',1)->orderBy('Partner_order','ASC')->get();
       return view('admin.partner.all', compact('all'));
     }
 
@@ -29,15 +29,15 @@ class PartnerController extends Controller
         return view('admin.partner.add');
     }
 
-    public function edit($partner_id)
+    public function edit($slug)
     {
-        $data = Partner::where('partner_status',1)->where('partner_id',$partner_id)->firstOrFail();
+        $data = Partner::where('partner_status',1)->where('partner_slug',$slug)->firstOrFail();
         return view('admin.partner.edit', compact('data'));
     }
 
-    public function view($partner_id)
+    public function view($slug)
     {
-        $data = Partner::where('partner_status',1)->where('partner_id',$partner_id)->firstOrFail();
+        $data = Partner::where('partner_status',1)->where('partner_slug',$slug)->firstOrFail();
         return view('admin.partner.view', compact('data'));
     }
 
@@ -66,7 +66,7 @@ class PartnerController extends Controller
         if($request->hasFile('pic')){
             $image = $request->file('pic');
             $imageName = $insert . time() . '-' . rand(100,200) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(200,200)->save('uploads/partners/'.$imageName);
+            Image::make($image)->save('uploads/partners/'.$imageName);
 
             Partner::where('partner_id',$insert)->update([
                 'partner_logo' => $imageName,
@@ -107,7 +107,7 @@ class PartnerController extends Controller
         if($request->hasFile('pic')){
             $image = $request->file('pic');
             $imageName = $partner_id . time() . '-' . rand(100,200) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(200,200)->save('uploads/partners/'.$imageName);
+            Image::make($image)->save('uploads/partners/'.$imageName);
 
             Partner::where('partner_id',$partner_id)->update([
                 'partner_logo' => $imageName,

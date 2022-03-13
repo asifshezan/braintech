@@ -7,8 +7,7 @@
         <div class="card-header card_header bg-dark">
           <div class="row">
             <div class="col-md-8 card_header_title">
-              <i class="fab fa-gg-circle"></i>All Partner Information
-            </div>
+              <i class="fab fa-gg-circle"></i>All Partner Information</div>
             <div class="col-md-4 card_header_btn">
               <a class="btn btn-sm btn-secondary chb_btn" href="{{ url('dashboard/partner/add') }}"><i class="fas fa-plus-circle"></i> Add Partner</a>
             </div>
@@ -46,8 +45,8 @@
                           Manage
                         </button>
                         <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ url('dashboard/partner/view/'.$data->partner_id) }}">View</a>
-                                <a class="dropdown-item" href="{{ url('dashboard/partner/edit/'.$data->partner_id) }}">Edit</a>
+                                <a class="dropdown-item" href="{{ url('dashboard/partner/view/'.$data->partner_slug) }}">View</a>
+                                <a class="dropdown-item" href="{{ url('dashboard/partner/edit/'.$data->partner_slug) }}">Edit</a>
                                 <a class="dropdown-item" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->partner_id}}">Delete</a>
                         </div>
                     </div>
@@ -75,7 +74,7 @@
       @csrf
       <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id=""><i class="fab fa-gg-circle"></i> Confirm Message</h5>
+        <h5 class="modal-title"><i class="fab fa-gg-circle"></i> Confirm Message</h5>
       </div>
       <div class="modal-body modal_body">
         Are you want to sure delete data?
