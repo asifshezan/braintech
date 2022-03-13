@@ -64,6 +64,32 @@
                     </li>
 
                     <li class="sidebar-item">
+                        <a href="{{ url('dashboard/service') }}" class="sidebar-link">
+                            <i class="fas fa-sliders"></i>
+                            <span class="align-middle">Service</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#sidebarProject" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="fas fa-diagram-project"></i>
+                            <span class="align-middle">Projects</span>
+                        </a>
+                        <ul id="sidebarProject" class="sidebar-dropdown list-unstyled collapse"
+                            data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/project') }}">All Projects</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/project/add') }}">Add Project</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/project/add') }}">Add Project</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
                         <a href="{{ url('dashboard/testimonial') }}" class="sidebar-link">
                             <i class="fas fa-vial"></i>
                             <span class="align-middle">Testimonial</span>
@@ -71,11 +97,11 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a data-bs-target="#sidebarManage" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                        <a data-bs-target="#sidebarPartner" data-bs-toggle="collapse" class="sidebar-link collapsed">
                             <i class="fab fa-accusoft"></i>
                             <span class="align-middle">Partner</span>
                         </a>
-                        <ul id="sidebarManage" class="sidebar-dropdown list-unstyled collapse"
+                        <ul id="sidebarPartner" class="sidebar-dropdown list-unstyled collapse"
                             data-bs-parent="#sidebar">
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="{{ url('dashboard/partner') }}">All Partners</a>
@@ -86,12 +112,7 @@
                         </ul>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a href="{{ url('dashboard/service') }}" class="sidebar-link">
-                            <i class="fas fa-sliders"></i>
-                            <span class="align-middle">Service</span>
-                        </a>
-                    </li>
+
 
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/teammember')}}" class="sidebar-link">

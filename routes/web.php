@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\RecycleController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PartnerController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -69,6 +70,17 @@ Route::post('dashboard/role/update',[RoleController::class, 'update']);
 Route::post('dashboard/role/softdelete',[RoleController::class, 'softdelete']);
 Route::post('dashboard/role/restore',[RoleController::class, 'restore']);
 Route::post('dashboard/role/delete',[RoleController::class, 'delete']);
+
+
+Route::get('dashboard/project',[ProjectController::class, 'index']);
+Route::get('dashboard/project/add',[ProjectController::class, 'add']);
+Route::get('dashboard/project/edit/{slug}',[ProjectController::class, 'edit']);
+Route::get('dashboard/project/view/{slug}',[ProjectController::class, 'view']);
+Route::post('dashboard/project/submit',[ProjectController::class, 'insert']);
+Route::post('dashboard/project/update',[ProjectController::class, 'update']);
+Route::post('dashboard/project/softdelete',[ProjectController::class, 'softdelete']);
+Route::post('dashboard/project/restore',[ProjectController::class, 'restore']);
+Route::post('dashboard/project/delete',[ProjectController::class, 'delete']);
 
 
 Route::get('dashboard/partner',[PartnerController::class, 'index']);
