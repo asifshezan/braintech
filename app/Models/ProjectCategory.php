@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Partner extends Model
+class ProjectCategory extends Model
 {
     use HasFactory;
 
     public function user(){
-        return $this->belongsTo(User::class, 'partner_creator', 'id');
+        return $this->belongsTo(User::class, 'procate_creator', 'name');
     }
 }

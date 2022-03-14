@@ -95,6 +95,7 @@ class ProjectController extends Controller
             'pro_url' => $request['pro_url'],
             'pro_order' => $request['pro_order'],
             'pro_remarks' => $request['pro_remarks'],
+            'procate_name' => $request['procate_name'],
             'pro_image' => $request['pro_image'],
             'pro_editor' => $editor,
             'pro_status' => 1,

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\RecycleController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ProjectCategoryController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -81,6 +82,18 @@ Route::post('dashboard/project/update',[ProjectController::class, 'update']);
 Route::post('dashboard/project/softdelete',[ProjectController::class, 'softdelete']);
 Route::post('dashboard/project/restore',[ProjectController::class, 'restore']);
 Route::post('dashboard/project/delete',[ProjectController::class, 'delete']);
+
+
+Route::get('dashboard/project-category',[ProjectCategoryController::class, 'index']);
+Route::get('dashboard/project-category/add',[ProjectCategoryController::class, 'add']);
+Route::get('dashboard/project-category/edit/{slug}',[ProjectCategoryController::class, 'edit']);
+Route::get('dashboard/project-category/view/{slug}',[ProjectCategoryController::class, 'view']);
+Route::post('dashboard/project-category/submit',[ProjectCategoryController::class, 'insert']);
+Route::post('dashboard/project-category/update',[ProjectCategoryController::class, 'update']);
+Route::post('dashboard/project-category/softdelete',[ProjectCategoryController::class, 'softdelete']);
+Route::post('dashboard/project-category/restore',[ProjectCategoryController::class, 'restore']);
+Route::post('dashboard/project-category/delete',[ProjectCategoryController::class, 'delete']);
+
 
 
 Route::get('dashboard/partner',[PartnerController::class, 'index']);

@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-md-12">
       <form method="POST" action="{{url('dashboard/role/update')}}" enctype="multipart/form-data">
         @csrf
         <div class="card">
@@ -43,6 +42,5 @@
         </div>
       </form>
     </div>
-    <div class="col-md-1"></div>
   </div>
 @endsection

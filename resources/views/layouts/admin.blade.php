@@ -84,7 +84,7 @@
                                 <a class="sidebar-link" href="{{ url('dashboard/project/add') }}">Add Project</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="{{ url('dashboard/project/add') }}">Add Project</a>
+                                <a class="sidebar-link" href="{{ url('dashboard/project-category') }}">Project Category</a>
                             </li>
                         </ul>
                     </li>
