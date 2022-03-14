@@ -67,8 +67,8 @@
               @php
                 $allcat=App\Models\ProjectCategory::where('procate_status',1)->orderBy('procate_id','ASC')->get();
               @endphp
-              <select class="form-control form_control" name="procate_name">
-                <option value="">Select Project Category</option>
+              <select class="form-control form_control" name="procate_id">
+                <option disabled selected >Select Project Category</option>
                 @foreach($allcat as $cate)
                 <option value="{{$cate->procate_id}}">{{$cate->procate_name}}</option>
                 @endforeach
