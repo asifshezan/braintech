@@ -5261,14 +5261,14 @@ body .search-modal .close:hover {
     16. Team Section CSS
 ---------------------------------------*/
 .rs-team {
-  background: url(assets/images/bg/team-bg.png);
+  background: url(../images/bg/team-bg.png);
   background-position: center center;
   background-size: cover;
   background-color: #000060;
 }
 .rs-team .team-item-wrap .team-wrap {
   padding: 9px 35px 25px 20px;
-  background: url(assets/images/team/ngbng.png);
+  background: url(../images/team/ngbng.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

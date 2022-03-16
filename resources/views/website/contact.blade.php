@@ -15,6 +15,9 @@
 <!-- Breadcrumbs End -->
 
 <!-- Contact Section Start -->
+    @php
+        $contacts = App\Models\ContactInformation::where('cont_status',1)->orderBy('cont_id','DESC')->firstOrFail();
+    @endphp
 <div class="rs-contact pt-120 md-pt-80">
     <div class="container">
         <div class="row">
@@ -30,7 +33,7 @@
                        </div>
                        <div class="address-text">
                             <span class="label">Email:</span>
-                            <a href="tel:123222-8888">(123) 222-8888</a>
+                            <a href="tel:123222-8888">{{ $contacts->cont_email1 }}</a>
                        </div>
                    </div>
                    <div class="address-box mb-25">
@@ -39,7 +42,7 @@
                        </div>
                        <div class="address-text">
                            <span class="label">Phone:</span>
-                           <a href="#">support@rstheme.com</a>
+                           <a href="#">{{ $contacts->cont_phone1 }}</a>
                        </div>
                    </div>
                    <div class="address-box">
@@ -48,7 +51,7 @@
                        </div>
                        <div class="address-text">
                            <span class="label">Address:</span>
-                           <div class="desc">New Jesrsy, 1201, USA</div>
+                           <div class="desc">{{ $contacts->cont_add1 }}</div>
                        </div>
                    </div>
                </div>
@@ -61,30 +64,29 @@
 
                    </div>
                     <div id="form-messages"></div>
-                    <form id="contact-form" method="post" action="https://rstheme.com/products/html/braintech/mailer.php">
+                    <form  method="post" action="{{ url('contact-message')}}">
+                        @csrf
                         <fieldset>
                             <div class="row">
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                    <input class="from-control" type="text" id="name" name="name" placeholder="Name" required="">
+                                    <input class="from-control" type="text"  name="cm_name" placeholder="Name" required="">
                                 </div>
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                    <input class="from-control" type="text" id="email" name="email" placeholder="E-Mail" required="">
+                                    <input class="from-control" type="text" name="cm_email" placeholder="E-Mail" required="">
                                 </div>
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                    <input class="from-control" type="text" id="phone" name="phone" placeholder="Phone Number" required="">
+                                    <input class="from-control" type="text" name="cm_phone" placeholder="Phone Number" required="">
                                 </div>
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                    <input class="from-control" type="text" id="website" name="website" placeholder="Your Website" required="">
+                                    <input class="from-control" type="text" name="cm_subject" placeholder="Your Subject" required="">
                                 </div>
 
-                                <div class="col-lg-12 mb-30">
-                                    <textarea class="from-control" id="message" name="message" placeholder="Your message Here" required=""></textarea>
+                                <div class="col-lg-12 mb-45">
+                                    <textarea class="from-control" name="cm_message" placeholder="Your message Here" required=""></textarea>
                                 </div>
                             </div>
                             <div class="btn-part">
-                                <div class="form-group mb-0">
-                                    <input class="readon learn-more submit" type="submit" value="Submit Now">
-                                </div>
+                              <input class="submit sub-small" type="submit" value="Submit Now">
                             </div>
                         </fieldset>
                     </form>
