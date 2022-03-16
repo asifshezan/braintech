@@ -60,7 +60,7 @@
                <select class="form-control form_control" name="role">
                 <option value="">Select User Role</option>
                 @foreach ($allRole as $urole)
-                    <option value="{{$urole->role_id}}" @if ($data->role==$urole->role_id)
+                    <option value="{{$urole->role_id}}" @if ($data->role == $urole->role_id)
                         selected
                     @endif>{{$urole->role_name}}</option>
                 @endforeach

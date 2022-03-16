@@ -290,6 +290,10 @@
             <!-- Process Section End -->
 
             <!-- Project Section Start -->
+
+            @php
+                $projects = App\Models\Project::where('pro_status',1)->orderBy('pro_order','ASC')->limit(4)->get();
+            @endphp
             <div class="rs-project bg5 style1 pt-120 md-pt-80">
                 <div class="container">
                    <div class="sec-title2 text-center mb-45 md-mb-30">
@@ -299,60 +303,17 @@
                        </h2>
                    </div>
                     <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="true" data-md-device-dots="false">
+                        @foreach ($projects as $project)
                         <div class="project-item">
                             <div class="project-img">
-                                <a href="case-studies-style1.html"><img src="{{ asset('contents/website')}}/images/project/main-home/1.jpg" alt="images"></a>
+                                <a href="case-studies-style1.html"><img src="{{ asset('uploads/projects/'.$project->pro_image) }}" alt="images"></a>
                             </div>
                             <div class="project-content">
-                                <h3 class="title"><a href="case-studies-style1.html">Product Design</a></h3>
-                                <span class="category"><a href="case-studies-style1.html">IT Technology</a></span>
+                                <h3 class="title"><a href="{{ $project->pro_url }}">{{ $project->pro_title }}</a></h3>
+                                <span class="category"><a href="case-studies-style1.html">{{ $project->procategory->procate_name }}</a></span>
                             </div>
                         </div>
-                        <div class="project-item">
-                            <div class="project-img">
-                                <a href="case-studies-style1.html"><img src="{{ asset('contents/website')}}/images/project/main-home/2.jpg" alt="images"></a>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="case-studies-style1.html">Product Engineering</a></h3>
-                                <span class="category"><a href="case-studies-style1.html">IT Technology</a></span>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-img">
-                                <a href="case-studies-style1.html"><img src="{{ asset('contents/website')}}/images/project/main-home/3.jpg" alt="images"></a>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="case-studies-style1.html">Analytic Solutions</a></h3>
-                                <span class="category"><a href="case-studies-style1.html">IT Technology</a></span>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-img">
-                                <a href="case-studies-style1.html"><img src="{{ asset('contents/website')}}/images/project/main-home/4.jpg" alt="images"></a>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="case-studies-style1.html">Growth Strategies</a></h3>
-                                <span class="category"><a href="case-studies-style1.html">IT Technology</a></span>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-img">
-                                <a href="case-studies-style1.html"><img src="{{ asset('contents/website')}}/images/project/main-home/5.jpg" alt="images"></a>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="case-studies-style1.html">Platform Integration</a></h3>
-                                <span class="category"><a href="case-studies-style1.html">IT Technology</a></span>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-img">
-                                <a href="case-studies-style1.html"><img src="{{ asset('contents/website')}}/images/project/main-home/6.jpg" alt="images"></a>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="case-studies-style1.html">Innovative Interfaces</a></h3>
-                                <span class="category"><a href="case-studies-style1.html">IT Technology</a></span>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

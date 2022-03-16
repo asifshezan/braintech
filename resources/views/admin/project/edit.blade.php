@@ -62,6 +62,25 @@
                   @endif
                 </div>
               </div>
+              <div class="row mb-3 {{$errors->has('procate_name') ? ' has-error':''}}">
+                <label class="col-sm-3 col-form-label col_form_label">Select Category<span class="req_star">*</span>:</label>
+                <div class="col-sm-7">
+                  @php
+                    $allcat=App\Models\ProjectCategory::where('procate_status',1)->orderBy('procate_id','ASC')->get();
+                  @endphp
+                  <select class="form-control form_control" name="procate_id">
+                    <option disabled>Select Project Category</option>
+                    @foreach($allcat as $cate)
+                    <option value="{{ $cate->procate_id }}" @if ($data->procate_id == $cate->procate_id)
+                        selected
+                    @endif>{{ $cate->procate_name }}</option>
+                    @endforeach
+                  </select>
+                  @if ($errors->has('procate_name'))
+                    <span class="error">{{ $errors->first('procate_name') }}</span>
+                  @endif
+                </div>
+              </div>
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label col_form_label">Project Image:</label>
                 <div class="col-sm-4">

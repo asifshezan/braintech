@@ -23,6 +23,7 @@
                     <th>Project URL</th>
                     <th>Order By</th>
                     <th>Project Remarks</th>
+                    <th>Category</th>
                     <th>Project Image</th>
                     <th>Manage</th>
                   </tr>
@@ -34,6 +35,7 @@
                     <td>{{ $data->pro_url }}</td>
                     <td>{{ $data->pro_order }}</td>
                     <td>{{ $data->pro_remarks }}</td>
+                    <td>{{ $data->procate_name }}</td>
                     <td>
                       @if($data->pro_image)
                         <img height="40" src="{{ asset('uploads/projects/'. $data->pro_image) }}"/>
