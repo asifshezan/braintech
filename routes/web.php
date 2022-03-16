@@ -35,6 +35,7 @@ Route::get('case-studies',[WebsiteController::class, 'case'])->name('website.cas
 Route::get('blog',[WebsiteController::class, 'blog'])->name('website.blog');
 Route::get('contact',[WebsiteController::class, 'contact'])->name('website.contact');
 Route::post('newsletter',[WebsiteController::class, 'newsletter'])->name('website.newsletter');
+Route::post('contact-message',[WebsiteController::class, 'contactmess']);
 
 // Admin Panel Routes Start
 Route::get('dashboard',[AdminController::class, 'index']);

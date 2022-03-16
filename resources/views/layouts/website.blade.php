@@ -292,7 +292,7 @@
               </div>
               <div class="col-lg-6">
                 <div class="copyright">
-                  <p>&copy; 2021 All Rights Reserved. Developed By <a href="http://rstheme.com/">RSTheme</a>
+                  <p>&copy; 2022 All Rights Reserved. Developed By <a href="http://creativeshaper.com">Creative Shaper</a>
                   </p>
                 </div>
               </div>

@@ -335,7 +335,7 @@ ul {
   background-color: #000060;
 }
 .bg7 {
-  background: url(assets/images/bg/cta-bg.jpg);
+  background: url(../images/bg/cta-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

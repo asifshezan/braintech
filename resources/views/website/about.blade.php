@@ -1,5 +1,18 @@
 @extends('layouts.website')
 @section('content')
+<!-- Breadcrumbs Start -->
+<div class="rs-breadcrumbs img3">
+    <div class="breadcrumbs-inner text-center">
+        <h1 class="page-title">About</h1>
+        <ul>
+            <li title="Braintech - IT Solutions and Technology Startup HTML Template">
+                <a class="active" href="index.html">Home</a>
+            </li>
+            <li>About</li>
+        </ul>
+    </div>
+</div>
+<!-- Breadcrumbs End -->
 <!-- About Section Start -->
 <div class="rs-about gray-color pt-120 pb-120 md-pt-80 md-pb-80">
     <div class="container">
@@ -42,6 +55,9 @@
 <!-- About Section End -->
 
 <!-- Team Section Start -->
+    @php
+        $teams = App\Models\TeamMember::where('team_status',1)->orderBy('team_order','ASC')->limit(9)->get();
+    @endphp
 <div class="rs-team pt-120 pb-120 md-pt-80 md-pb-80 xs-pb-54">
     <div class="sec-title2 text-center mb-30">
         <span class="sub-text style-bg white-color">Team</span>
@@ -52,227 +68,25 @@
     <div class="container">
         <div class="container">
             <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="3" data-md-device-nav="false" data-md-device-dots="true">
+                @foreach ($teams as $team)
                 <div class="team-item-wrap">
                     <div class="team-wrap">
                         <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/1.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('uploads/teammembers/'.$team->team_image) }}" alt=""></a>
                         </div>
                     </div>
                     <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Makhaia Antitni</a></h4>
-                        <span class="designation">President & CEO</span>
+                        <h4 class="person-name"><a href="#">{{ $team->team_name }}</a></h4>
+                        <span class="designation">{{ $team->team_designation }}</span>
                         <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                            <li><a href="{{ $team->team_facebook }}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ $team->team_instragram }}"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="{{ $team->team_twitter }}"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{ $team->team_linkedin}}"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/2.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Corey Anderson</a></h4>
-                        <span class="designation">CEO & Founder</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/3.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Masud Rana</a></h4>
-                        <span class="designation">Web Developer</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/4.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Najmul Huda</a></h4>
-                        <span class="designation">Digital Marketer</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/5.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Rushali Rumi</a></h4>
-                        <span class="designation">Design Lead</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/6.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Abu Sayed</a></h4>
-                        <span class="designation">App Developer</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/7.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Sonia Akhter</a></h4>
-                        <span class="designation">Graphic Artist</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/8.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Rayhan Ali</a></h4>
-                        <span class="designation">CEO & Founder</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/9.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Benjir Akther</a></h4>
-                        <span class="designation">Graphic Designer</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/1.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Makhaia Antitni</a></h4>
-                        <span class="designation">President & CEO</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/2.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Corey Anderson</a></h4>
-                        <span class="designation">CEO & Founder</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/3.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Masud Rana</a></h4>
-                        <span class="designation">Web Developer</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-item-wrap">
-                    <div class="team-wrap">
-                        <div class="image-inner">
-                            <a href="single-team.html"><img src="{{asset('contents/website')}}/images/team/style1/4.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h4 class="person-name"><a href="single-team.html">Najmul Huda</a></h4>
-                        <span class="designation">Digital Marketer</span>
-                        <ul class="team-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -342,105 +156,6 @@
 </div>
 <!-- Process Section End -->
 
-<!-- Pricing section start -->
-<div class="rs-pricing style2 gray-color pt-120 pb-143 md-pt-80 md-pb-80">
-    <div class="container">
-        <div class="sec-title2 text-center mb-45">
-            <span class="sub-text style-bg">Pricing</span>
-            <h2 class="title title2">
-               Our Pricing Plan
-            </h2>
-        </div>
-       <div class="row">
-           <div class="col-lg-4 md-mb-30">
-               <div class="pricing-table new-style2">
-                   <div class="pricing-badge">
-                       Silver
-                   </div>
-                   <div class="pricing-icon">
-                       <img src="{{asset('contents/website')}}/images/pricing/main-home/icons/1.png" alt="">
-                   </div>
-                   <div class="pricing-table-price">
-                        <div class="pricing-table-bags">
-                            <span class="pricing-currency">$</span>
-                            <span class="table-price-text">29.99</span>
-                            <span class="table-period">Monthly Package</span>
-                        </div>
-                   </div>
-                   <div class="pricing-table-body">
-                       <ul>
-                           <li><i class="fa fa-check"></i><span>Powerful Admin Panel</span></li>
-                           <li><i class="fa fa-check"></i><span>1 Native Android App</span></li>
-                           <li><i class="fa fa-close"></i><span>Multi-Language Support</span></li>
-                           <li><i class="fa fa-check"></i><span>Support via E-mail and Phone</span></li>
-                       </ul>
-                   </div>
-                   <div class="btn-part">
-                       <a class="readon buy-now" href="contact.html">Buy Now</a>
-                   </div>
-               </div>
-           </div>
-           <div class="col-lg-4 md-mb-30">
-               <div class="pricing-table primary-bg">
-                   <div class="pricing-badge white-color-bg">
-                       Gold
-                   </div>
-                   <div class="pricing-icon">
-                       <img src="{{asset('contents/website')}}/images/pricing/main-home/icons/2.png" alt="">
-                   </div>
-                  <div class="pricing-table-price">
-                       <div class="pricing-table-bags">
-                           <span class="pricing-currency">$</span>
-                           <span class="table-price-text">39.99</span>
-                           <span class="table-period">Monthly Package</span>
-                       </div>
-                  </div>
-                   <div class="pricing-table-body">
-                       <ul>
-                            <li><i class="fa fa-check"></i><span>Powerful Admin Panel</span></li>
-                            <li><i class="fa fa-check"></i><span>2 Native Android App</span></li>
-                            <li><i class="fa fa-check"></i><span>Multi-Language Support</span></li>
-                            <li><i class="fa fa-check"></i><span>Support via E-mail and Phone</span></li>
-                       </ul>
-                   </div>
-                   <div class="btn-part">
-                       <a class="readon buy-now" href="contact.html">Buy Now</a>
-                   </div>
-               </div>
-           </div>
-           <div class="col-lg-4">
-               <div class="pricing-table new-style2">
-                   <div class="pricing-badge">
-                       Platinum
-                   </div>
-                   <div class="pricing-icon">
-                       <img src="{{asset('contents/website')}}/images/pricing/main-home/icons/3.png" alt="">
-                   </div>
-                    <div class="pricing-table-price">
-                         <div class="pricing-table-bags">
-                             <span class="pricing-currency">$</span>
-                             <span class="table-price-text">79.99</span>
-                             <span class="table-period">Monthly Package</span>
-                         </div>
-                    </div>
-                   <div class="pricing-table-body">
-                       <ul>
-                            <li><i class="fa fa-check"></i><span>Powerful Admin Panel</span></li>
-                            <li><i class="fa fa-check"></i><span>3 Native Android App</span></li>
-                            <li><i class="fa fa-check"></i><span>Multi-Language Support</span></li>
-                            <li><i class="fa fa-check"></i><span>Support via E-mail and Phone</span></li>
-                       </ul>
-                   </div>
-                   <div class="btn-part">
-                       <a class="readon buy-now" href="contact.html">Buy Now</a>
-                   </div>
-               </div>
-           </div>
-       </div>
-    </div>
-</div>
-<!-- Pricing section end -->
-
 <!-- Counter Section Start -->
 <div class="rs-contact-wrap bg5 pt-120 pb-390 md-pt-80">
    <div class="container">
@@ -472,24 +187,25 @@
             <div class="col-lg-6 padding-0">
                 <div class="rs-requset">
                     <div id="form-messages"></div>
-                    <form id="contact-form" method="post" action="https://rstheme.com/products/html/braintech/mailer.php">
+                    <form  method="post" action="{{ url('contact-message')}}">
+                        @csrf
                         <fieldset>
                             <div class="row">
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                    <input class="from-control" type="text" id="name" name="name" placeholder="Name" required="">
+                                    <input class="from-control" type="text"  name="cm_name" placeholder="Name" required="">
                                 </div>
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                    <input class="from-control" type="text" id="email" name="email" placeholder="E-Mail" required="">
+                                    <input class="from-control" type="text" name="cm_email" placeholder="E-Mail" required="">
                                 </div>
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                    <input class="from-control" type="text" id="phone" name="phone" placeholder="Phone Number" required="">
+                                    <input class="from-control" type="text" name="cm_phone" placeholder="Phone Number" required="">
                                 </div>
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
-                                    <input class="from-control" type="text" id="website" name="website" placeholder="Your Website" required="">
+                                    <input class="from-control" type="text" name="cm_subject" placeholder="Your Subject" required="">
                                 </div>
 
                                 <div class="col-lg-12 mb-45">
-                                    <textarea class="from-control" id="message" name="message" placeholder="Your message Here" required=""></textarea>
+                                    <textarea class="from-control" name="cm_message" placeholder="Your message Here" required=""></textarea>
                                 </div>
                             </div>
                             <div class="btn-part">

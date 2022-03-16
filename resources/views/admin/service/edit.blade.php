@@ -45,12 +45,21 @@
                   @endif
               </div>
               </div>
-              <div class="row mb-3 {{$errors->has('service_icon') ? 'has-error':''}}">
-                <label class="col-sm-3 col-form-label col_form_label">Service Icon<span class="req_star">*</span>:</label>
+              <div class="row mb-3 {{$errors->has('btn_name') ? 'has-error':''}}">
+                <label class="col-sm-3 col-form-label col_form_label">Button Name<span class="req_star">*</span>:</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control form_control" name="service_icon" value="{{ $data->service_icon }}">
-                  @if ($errors->has('service_icon'))
-                      <span class="error">{{ $errors->first('service_icon') }} </span>
+                  <input type="text" class="form-control form_control" name="btn_name" value="{{ $data->btn_name }}">
+                  @if ($errors->has('btn_name'))
+                      <span class="error">{{ $errors->first('btn_name') }} </span>
+                  @endif
+              </div>
+              </div>
+              <div class="row mb-3 {{$errors->has('btn_url') ? 'has-error':''}}">
+                <label class="col-sm-3 col-form-label col_form_label">Button URL<span class="req_star">*</span>:</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control form_control" name="btn_url" value="{{ $data->btn_url }}">
+                  @if ($errors->has('btn_url'))
+                      <span class="error">{{ $errors->first('btn_url') }} </span>
                   @endif
               </div>
               </div>

@@ -29,10 +29,15 @@
                       <td>{{ $data->service_subtitle }}</td>
                     </tr>
                     <tr>
-                      <td>Service Icon</td>
+                      <td>Button Name</td>
                       <td>:</td>
-                      <td>{{ $data->service_icon }}</td>
+                      <td>{{ $data->btn_name }}</td>
                     </tr>
+                    <tr>
+                        <td>Button URL</td>
+                        <td>:</td>
+                        <td>{{ $data->btn_url}}</td>
+                      </tr>
                     <tr>
                         <td>Order By</td>
                         <td>:</td>

@@ -16,11 +16,11 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('service_id');
             $table->string('service_title',100)->nullable();
-            $table->text('service_subtitle')->nullable;
+            $table->text('service_subtitle')->nullable();
             $table->text('service_details')->nullable();
-            $table->string('service_icon', 50)->nullable();
+            $table->string('btn_name', 50)->nullable();
             $table->string('service_image', 50)->nullable();
-            $table->string('service_url', 150)->nullable();
+            $table->string('btn_url', 150)->nullable();
             $table->integer('service_order')->nullable();
             $table->integer('service_feature')->default(1);
             $table->integer('service_publish')->default(1);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\ContactMessage;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -61,6 +62,35 @@ class WebsiteController extends Controller
             return redirect()->back();
         }else{
             Session::flash('error','Subscribe error.');
+            return redirect()->back();
+        }
+    }
+
+
+    public function contactmess(Request $request){
+        $this->validate($request,[
+            'cm_name' => ['required','string'],
+            'cm_email' => ['required','string'],
+        ],[
+            'cm_name.required' => 'please enter your name',
+            'cm_email.required' => 'please enter email.',
+        ]);
+        $slug = uniqid();
+        $insert = ContactMessage::insertGetId([
+            'cm_name' => $request['cm_name'],
+            'cm_phone' => $request['cm_phone'],
+            'cm_email' => $request['cm_email'],
+            'cm_subject' => $request['cm_subject'],
+            'cm_message' => $request['cm_message'],
+            'cm_slug' => $slug,
+            'created_at' => Carbon::now()->toDateTimeString(),
+        ]);
+
+        if($insert){
+            Session::flash('success','Successfully send message.');
+            return redirect()->back();
+        }else{
+            Session::flash('error','Sending error.');
             return redirect()->back();
         }
     }

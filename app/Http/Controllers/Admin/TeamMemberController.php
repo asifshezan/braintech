@@ -67,7 +67,7 @@ class TeamMemberController extends Controller
         if($request->hasFile('pic')){
             $image = $request->file('pic');
             $imageName = $insert . time() . '-' . rand(100,200) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(200,200)->save('uploads/teammembers/'.$imageName);
+            Image::make($image)->save('uploads/teammembers/'.$imageName);
 
             TeamMember::where('team_id',$insert)->update([
                 'team_image' => $imageName,
@@ -113,7 +113,7 @@ class TeamMemberController extends Controller
         if($request->hasFile('pic')){
             $image = $request->file('pic');
             $imageName = $team_id . time() . '_' . rand(1000,2000) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(200,200)->save('uploads/teammembers/'.$imageName);
+            Image::make($image)->save('uploads/teammembers/'.$imageName);
 
             TeamMember::where('team_id',$team_id)->update([
                 'team_image' => $imageName,

@@ -41,7 +41,7 @@ class ServiceController extends Controller
     public function insert(Request $request){
         $this->validate($request,[
             'service_title' => ['required', 'string', 'max:100'],
-            'service_subtitle' => ['required', 'string', 'max:100'],
+            'service_subtitle' => ['required', 'string', 'max:300'],
         ],[
             'service_title.required' => 'Please enter service name.',
             'service_subtitle.required' => 'Please enter service subtitle.',
@@ -53,10 +53,10 @@ class ServiceController extends Controller
         $insert = Service::insertGetId([
             'service_title' => $request['service_title'],
             'service_subtitle' => $request['service_subtitle'],
-            'service_icon' => $request['service_icon'],
+            'btn_name' => $request['btn_name'],
+            'btn_url' => $request['btn_url'],
             'service_order' => $request['service_order'],
             'service_details' => $request['service_details'],
-            'service_url' => Str::slug($request['service_title'], '-'),
             'service_feature' => 1,
             'service_publish' => 1,
             'service_creator' => $creator,
@@ -88,7 +88,7 @@ class ServiceController extends Controller
     public function update(Request $request){
         $this->validate($request,[
             'service_title' => ['required', 'string', 'max:100'],
-            'service_subtitle' => ['required', 'string', 'max:100'],
+            'service_subtitle' => ['required', 'string', 'max:300'],
         ],[
             'service_title.required' => 'Please enter service name.',
             'service_subtitle.required' => 'Please enter service subtitle.',
@@ -99,11 +99,11 @@ class ServiceController extends Controller
         $update = Service::where('service_id',$service_id)->update([
             'service_title' => $request['service_title'],
             'service_subtitle' => $request['service_subtitle'],
-            'service_icon' => $request['service_icon'],
+            'btn_name' => $request['btn_name'],
+            'btn_url' => $request['btn_url'],
             'service_order' => $request['service_order'],
             'service_details' => $request['service_details'],
             'service_editor' => $editor,
-            'service_url' => Str::slug($request['service_title'], '-'),
             'updated_at' => Carbon::now()->toDateTimeString(),
         ]);
 

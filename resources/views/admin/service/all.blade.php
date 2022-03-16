@@ -21,7 +21,7 @@
                   <tr>
                     <th>Service Title</th>
                     <th>Service Subtitle</th>
-                    <th>Service Icon</th>
+                    <th>Button URL</th>
                     <th>Order By</th>
                     <th>Service Details</th>
                     <th>Image</th>
@@ -33,7 +33,7 @@
                   <tr>
                     <td>{{ $data->service_title }}</td>
                     <td>{{ $data->service_subtitle }}</td>
-                    <td>{{ $data->service_icon }}</td>
+                    <td>{{ $data->btn_url }}</td>
                     <td>{{ $data->service_order }}</td>
                     <td>{{ $data->service_details }}</td>
                     <td>

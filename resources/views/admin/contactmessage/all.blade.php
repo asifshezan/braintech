@@ -19,6 +19,8 @@
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
                     <th>Manage</th>
                   </tr>
                 </thead>
@@ -28,6 +30,8 @@
                     <td>{{$data->cm_name}}</td>
                     <td>{{$data->cm_phone}}</td>
                     <td>{{$data->cm_email}}</td>
+                    <td>{{ $data->cm_subject }}</td>
+                    <td>{{ $data->cm_message }}</td>
                     <td>
                       <div class="btn-group">
   						<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
