@@ -35,7 +35,7 @@
                     <td>{{ $data->pro_url }}</td>
                     <td>{{ $data->pro_order }}</td>
                     <td>{{ $data->pro_remarks }}</td>
-                    <td>{{ $data->procate_name }}</td>
+                    <td>{{ $data->procategory->procate_name }}</td>
                     <td>
                       @if($data->pro_image)
                         <img height="40" src="{{ asset('uploads/projects/'. $data->pro_image) }}"/>
