@@ -182,7 +182,7 @@
                             </li>
                         </ul>
                     </li>
-                    @if (Auth::user()->role == 1)
+                    @if (Auth::user()->role == 1 || Auth::user()->role == 2)
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{url('/')}}" target="_blank">
                             <i class="fas fa-globe"></i>
