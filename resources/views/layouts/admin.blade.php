@@ -158,7 +158,6 @@
                             <span class="align-middle">Newsletter</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a data-bs-target="#sidebarManage" data-bs-toggle="collapse" class="sidebar-link collapsed">
                             <i class="fas fa-screwdriver-wrench"></i>
@@ -183,15 +182,15 @@
                             </li>
                         </ul>
                     </li>
-
-
-
+                    @if (Auth::user()->role == 1)
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{url('/')}}" target="_blank">
                             <i class="fas fa-globe"></i>
                             <span class="align-middle">Live Site</span>
                         </a>
                     </li>
+                    @endif
+
                     <form action="{{route('logout')}}" method="POST" id="logout-form"> @csrf <li class="sidebar-item">
                             <a class="sidebar-link" href="{{route('logout')}}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -241,9 +240,10 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
                                 data-bs-toggle="dropdown">
-                                <img src="{{asset('contents/admin')}}/img/avatars/avatar.jpg"
+                                <img src="{{ asset('uploads/users/'.Auth::user()->photo) }}"
+
                                     class="avatar img-fluid rounded-circle me-1" alt="Chris Wood" />
-                                <span class="text-dark">{{Auth::user()->name}}</span>
+                                <span class="text-dark">{{ Auth::user()->name }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a class="dropdown-item" href="pages-profile.html">

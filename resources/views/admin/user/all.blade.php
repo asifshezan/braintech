@@ -24,7 +24,6 @@
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Role</th>
-                    <th>Category</th>
                     <th>Photo</th>
                     <th>Manage</th>
                   </tr>
@@ -36,7 +35,6 @@
                     <td>{{ $data->phone }}</td>
                     <td>{{ $data->email }}</td>
                     <td>{{ $data->roleInfo->role_name }}</td>
-                    <td>{{ $data->procate_id }}</td>
                     <td>
                       @if($data->photo)
                         <img height="40" src="{{ asset('uploads/users/'.$data->photo) }}"/>

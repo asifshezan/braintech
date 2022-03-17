@@ -19,7 +19,7 @@ class UserController extends Controller
     }
 
     public function index(){
-        $all=User::where('status',1)->orderBy('id','DESC')->get();
+        $all = User::where('status',1)->orderBy('id','DESC')->get();
         return view('admin.user.all', compact('all'));
     }
 
@@ -28,13 +28,12 @@ class UserController extends Controller
     }
 
     public function edit($id){
-
         $data = User::where('status',1)->where('id',$id)->firstOrFail();
         return view('admin.user.edit',compact('data'));
     }
 
     public function view($id){
-        $data=User::where('status',1)->where('id',$id)->firstOrFail();
+        $data = User::where('status',1)->where('id',$id)->firstOrFail();
         return view('admin.user.view',compact('data'));
     }
 
@@ -98,8 +97,8 @@ class UserController extends Controller
         ]);
 
         if($request->hasFile('pic')){
-            $image=$request->file('pic');
-            $imageName=$id.'_'.time().'_'.rand(112000,11112000).'.'.$image->getClientOriginalExtension();
+            $image = $request->file('pic');
+            $imageName = $id . time() .'_'. rand(112000,11112000) .'.'. $image->getClientOriginalExtension();
             Image::make($image)->resize(200,200)->save('uploads/users/'.$imageName);
 
             User::where('id',$id)->update([

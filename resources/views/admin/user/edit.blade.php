@@ -77,7 +77,7 @@
                 </div>
                 <div class="col-md-2">
                     @if ($data->photo!='')
-                        <img src="{{asset('uploads/users/.$data->photo')}}" height="60">
+                        <img src="{{asset('uploads/users/'.$data->photo)}}" height="60">
                     @else
                         <img src="{{asset('uploads/avatar.png')}}" height="60">
                     @endif
