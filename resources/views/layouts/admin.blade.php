@@ -37,7 +37,7 @@
                             <span class="align-middle">Dashboards</span>
                         </a>
                     </li>
-
+                    @if (Auth::user()->role == 1 || Auth::user()->role == 2)
                     <li class="sidebar-item {{ Request::routeIs('user*') ? 'active' : '' }}">
                         <a data-bs-target="#sidebarUser" data-bs-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle" data-feather="users"></i>
@@ -112,8 +112,6 @@
                         </ul>
                     </li>
 
-
-
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/teammember')}}" class="sidebar-link">
                             <i class="fas fa-user-secret"></i>
@@ -182,14 +180,14 @@
                             </li>
                         </ul>
                     </li>
-                    @if (Auth::user()->role == 1 || Auth::user()->role == 2)
+                @endif
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{url('/')}}" target="_blank">
                             <i class="fas fa-globe"></i>
                             <span class="align-middle">Live Site</span>
                         </a>
                     </li>
-                    @endif
+
 
                     <form action="{{route('logout')}}" method="POST" id="logout-form"> @csrf <li class="sidebar-item">
                             <a class="sidebar-link" href="{{route('logout')}}"
