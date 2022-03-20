@@ -59,14 +59,14 @@
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/banner') }}" class="sidebar-link">
                             <i class="align-middle" data-feather="airplay"></i>
-                            <span class="align-middle">Banner</span>
+                            <span class="align-middle">Banners</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/service') }}" class="sidebar-link">
                             <i class="fas fa-sliders"></i>
-                            <span class="align-middle">Service</span>
+                            <span class="align-middle">Services</span>
                         </a>
                     </li>
 
@@ -92,14 +92,14 @@
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/testimonial') }}" class="sidebar-link">
                             <i class="fas fa-vial"></i>
-                            <span class="align-middle">Testimonial</span>
+                            <span class="align-middle">Testimonials</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a data-bs-target="#sidebarPartner" data-bs-toggle="collapse" class="sidebar-link collapsed">
                             <i class="fab fa-accusoft"></i>
-                            <span class="align-middle">Partner</span>
+                            <span class="align-middle">Partners</span>
                         </a>
                         <ul id="sidebarPartner" class="sidebar-dropdown list-unstyled collapse"
                             data-bs-parent="#sidebar">
@@ -115,14 +115,14 @@
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/teammember')}}" class="sidebar-link">
                             <i class="fas fa-user-secret"></i>
-                            <span class="align-middle">Team Member</span>
+                            <span class="align-middle">Team Members</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/client') }}" class="sidebar-link">
                             <i class="fas fa-person"></i>
-                            <span class="align-middle">Client</span>
+                            <span class="align-middle">Clients</span>
                         </a>
                     </li>
 
@@ -147,13 +147,13 @@
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/contact-message') }}" class="sidebar-link">
                             <i class="fas fa-message"></i>
-                            <span class="align-middle">Contact Message</span>
+                            <span class="align-middle">Contact Messages</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ url('dashboard/newsletter') }}" class="sidebar-link">
                             <i class="fas fa-newspaper"></i>
-                            <span class="align-middle">Newsletter</span>
+                            <span class="align-middle">Newsletters</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -180,6 +180,46 @@
                             </li>
                         </ul>
                     </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#sidebarRecycle" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="fas fa-screwdriver-wrench"></i>
+                            <span class="align-middle">Recycle Bin</span>
+                        </a>
+                        <ul id="sidebarRecycle" class="sidebar-dropdown list-unstyled collapse"
+                            data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/users') }}">Users</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/banners') }}">Banners</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/services') }}">Services</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/projects') }}">Projects</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/testimonials') }}">Testimonials</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/partners') }}">Partners</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/team-members') }}">Team Members</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/clients') }}">Clients</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/gallery') }}">Gallery</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/newsletters') }}">Newsletters</a>
+                            </li>
+                        </ul>
+                    </li>
                 @endif
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{url('/')}}" target="_blank">
@@ -190,7 +230,7 @@
 
 
                     <form action="{{route('logout')}}" method="POST" id="logout-form"> @csrf <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{route('logout')}}"
+                            <a class="sidebar-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fas fa-right-from-bracket"></i>
                                 <span class="align-middle">Logout</span>

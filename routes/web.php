@@ -220,6 +220,18 @@ Route::post('dashboard/page/delete',[PageController::class, 'delete']);
 
 
 
-Route::get('dashboard/recycle',[RecycleController::class, 'index']);
+Route::post('dashboard/recycle/users',[RecycleController::class, 'users']);
+Route::post('dashboard/recycle/banners',[RecycleController::class, 'banners']);
+Route::post('dashboard/recycle/services',[RecycleController::class, 'services']);
+Route::post('dashboard/recycle/projects',[RecycleController::class, 'projects']);
+Route::post('dashboard/recycle/testimonials',[RecycleController::class, 'testimonials']);
+Route::post('dashboard/recycle/partners',[RecycleController::class, 'partners']);
+Route::post('dashboard/recycle/team-members',[RecycleController::class, 'team-members']);
+Route::post('dashboard/recycle/clients',[RecycleController::class, 'clients']);
+Route::post('dashboard/recycle/gallery',[RecycleController::class, 'gallery']);
+Route::post('dashboard/recycle/newsletters',[RecycleController::class, 'newsletters']);
+
+
+
 
 require __DIR__.'/auth.php';
