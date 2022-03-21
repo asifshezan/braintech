@@ -32,10 +32,10 @@
                   @foreach($all as $data)
                   <tr>
                     <td>{{ $data->service_title }}</td>
-                    <td>{{ $data->service_subtitle }}</td>
+                    <td>{{ Str::limit($data->service_subtitle, 12, '....') }}</td>
                     <td>{{ $data->btn_url }}</td>
                     <td>{{ $data->service_order }}</td>
-                    <td>{{ $data->service_details }}</td>
+                    <td>{{ Str::limit($data->service_details, 12, '.....') }}</td>
                     <td>
                       @if($data->service_image)
                         <img height="40" src="{{ asset('uploads/services/'.$data->service_image) }}"/>
