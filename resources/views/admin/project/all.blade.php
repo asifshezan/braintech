@@ -35,7 +35,7 @@
                     <td>{{ $data->pro_url }}</td>
                     <td>{{ $data->pro_order }}</td>
                     <td>{{ $data->pro_remarks }}</td>
-                    <td>{{ $data->procategory->procate_name }}</td>
+                    <td>{{ $data->procate_id}}</td>
                     <td>
                       @if($data->pro_image)
                         <img height="40" src="{{ asset('uploads/projects/'. $data->pro_image) }}"/>
@@ -86,7 +86,7 @@
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-dark">Confirm</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
       </div>
     </div>
     </form>

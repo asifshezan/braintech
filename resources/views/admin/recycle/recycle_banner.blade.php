@@ -7,10 +7,8 @@
         <div class="card-header card_header bg-dark">
           <div class="row">
             <div class="col-md-8 card_header_title">
-              <i class="fab fa-gg-circle"></i>All Service Information</div>
-            <div class="col-md-4 card_header_btn">
-              <a class="btn btn-sm btn-secondary chb_btn" href="{{ url('dashboard/service/add') }}"><i class="fas fa-plus-circle"></i> Add Service</a>
-            </div>
+              <i class="fab fa-gg-circle"></i>All Recycle Banner Information</div>
+              <div class="clr"></div>
           </div>
         </div>
         <div class="card-body card_body">
@@ -19,26 +17,28 @@
               <table id="allDataTable" class="table table-bordered table-striped table-hover custom_table">
                 <thead class="table-dark">
                   <tr>
-                    <th>Service Title</th>
-                    <th>Service Subtitle</th>
-                    <th>Button URL</th>
+                    <th>Title</th>
+                    <th>SubTitle</th>
+                    <th>Text</th>
+                    <th>Button</th>
+                    <th>URL</th>
                     <th>Order By</th>
-                    <th>Service Details</th>
-                    <th>Image</th>
+                    <th>Photo</th>
                     <th>Manage</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($all as $data)
+                  @foreach($allban as $data)
                   <tr>
-                    <td>{{ $data->service_title }}</td>
-                    <td>{{ Str::limit($data->service_subtitle, 12, '....') }}</td>
-                    <td>{{ $data->btn_url }}</td>
-                    <td>{{ $data->service_order }}</td>
-                    <td>{{ Str::limit($data->service_details, 12, '.....') }}</td>
+                    <td>{{ $data->ban_title }}</td>
+                    <td>{{ $data->ban_subtitle }}</td>
+                    <td>{{ $data->ban_text }}</td>
+                    <td>{{ $data->ban_button }}</td>
+                    <td>{{ $data->ban_url }}</td>
+                    <td>{{ $data->ban_order }}</td>
                     <td>
-                      @if($data->service_image)
-                        <img height="40" src="{{ asset('uploads/services/'.$data->service_image) }}"/>
+                      @if($data->ban_image)
+                        <img height="40" src="{{ asset('uploads/banners/'.$data->ban_image) }}"/>
                       @else
                         <img height="40" src="{{ asset('uploads/avatar.png') }}"/>
                       @endif
@@ -49,9 +49,8 @@
                           Manage
                         </button>
                         <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ url('dashboard/service/view/'.$data->service_id) }}">View</a>
-                                <a class="dropdown-item" href="{{ url('dashboard/service/edit/'.$data->service_id) }}">Edit</a>
-                                <a class="dropdown-item" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{ $data->service_id }}">Delete</a>
+                                <a class="dropdown-item" href="{{url('dashboard/banner/restore/'.$data->ban_slug)}}">Restore</a>
+                                <a class="dropdown-item" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{$data->ban_id}}">Delete</a>
                         </div>
                     </div>
                     </td>
@@ -72,9 +71,9 @@
     </form>
   </div>
 </div>
-<div class="modal fade" id="softDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="post" action="{{url('dashboard/service/softdelete')}}">
+    <form method="post" action="{{ url('dashboard/banner/delete') }}">
       @csrf
       <div class="modal-content">
       <div class="modal-header">
@@ -86,7 +85,7 @@
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-dark">Confirm</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
       </div>
     </div>
     </form>

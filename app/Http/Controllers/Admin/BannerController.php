@@ -142,11 +142,5 @@ class BannerController extends Controller
         }
     }
 
-    public function restore(){
 
-    }
-
-    public function delete(){
-
-    }
 }

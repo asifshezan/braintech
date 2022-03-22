@@ -59,8 +59,7 @@ Route::get('dashboard/banner/view/{ban_id}',[BannerController::class, 'view']);
 Route::post('dashboard/banner/submit',[BannerController::class, 'insert']);
 Route::post('dashboard/banner/update',[BannerController::class, 'update']);
 Route::post('dashboard/banner/softdelete',[BannerController::class, 'softdelete']);
-Route::post('dashboard/banner/restore',[BannerController::class, 'restore']);
-Route::post('dashboard/banner/delete',[BannerController::class, 'delete']);
+
 
 
 Route::get('dashboard/role',[RoleController::class, 'index']);
@@ -197,6 +196,7 @@ Route::get('dashboard/newsletter/view',[NewsletterController::class, 'view']);
 Route::get('dashboard/newsletter/delete',[NewsletterController::class, 'delete']);
 
 
+// Content Controller
 Route::get('dashboard/content',[ContentController::class, 'index']);
 Route::get('dashboard/content/add',[ContentController::class, 'addd']);
 Route::get('dashboard/content/edit',[ContentController::class, 'edit']);
@@ -207,9 +207,9 @@ Route::post('dashboard/content/softdelete',[ContentController::class, 'softdelet
 Route::post('dashboard/content/restore',[ContentController::class, 'restore']);
 Route::post('dashboard/content/delete',[ContentController::class, 'delete']);
 
-
+// Page Controller
 Route::get('dashboard/page',[PageController::class, 'index']);
-Route::get('dashboard/page/add',[PageController::class, 'addd']);
+Route::get('dashboard/page/add',[PageController::class, 'add']);
 Route::get('dashboard/page/edit',[PageController::class, 'edit']);
 Route::get('dashboard/page/view',[PageController::class, 'view']);
 Route::post('dashboard/page/submit',[PageController::class, 'insert']);
@@ -219,18 +219,20 @@ Route::post('dashboard/page/restore',[PageController::class, 'restore']);
 Route::post('dashboard/page/delete',[PageController::class, 'delete']);
 
 
+// Banner Recycle
+Route::get('dashboard/banner/recycle_banner',[RecycleController::class, 'recycle_banner']);
+Route::get('dashboard/banner/restore/{slug}',[RecycleController::class, 'banner_restore']);
+Route::post('dashboard/banner/delete',[RecycleController::class, 'banner_delete']);
 
-Route::post('dashboard/recycle/users',[RecycleController::class, 'users']);
-Route::post('dashboard/recycle/banners',[RecycleController::class, 'banners']);
-Route::post('dashboard/recycle/services',[RecycleController::class, 'services']);
-Route::post('dashboard/recycle/projects',[RecycleController::class, 'projects']);
-Route::post('dashboard/recycle/testimonials',[RecycleController::class, 'testimonials']);
-Route::post('dashboard/recycle/partners',[RecycleController::class, 'partners']);
-Route::post('dashboard/recycle/team-members',[RecycleController::class, 'team-members']);
-Route::post('dashboard/recycle/clients',[RecycleController::class, 'clients']);
-Route::post('dashboard/recycle/gallery',[RecycleController::class, 'gallery']);
-Route::post('dashboard/recycle/newsletters',[RecycleController::class, 'newsletters']);
+// Service Recycle
+Route::get('dashboard/service/recycle_service', [RecycleController::class, 'recycle_service']);
+Route::get('dashboard/service/restore/{slug}', [RecycleController::class, 'service_restore']);
+Route::post('dashboard/service/delete', [RecycleController::class, 'service_delete']);
 
+// Project Recycle
+Route::get('dashboard/recycle/project', [RecycleController::class, 'recycle_project']);
+Route::get('dashboard/project/restore/{slug}', [RecycleController::class, 'project_restore']);
+Route::post('dashboard/project/delete', [RecycleController::class, 'project_delete']);
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\ProjectCategory;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -38,6 +39,7 @@ class ProjectController extends Controller
 
 
     public function insert(Request $request){
+
         $this->validate($request,[
             'pro_title' => ['required','string'],
         ],[
@@ -51,9 +53,8 @@ class ProjectController extends Controller
             'pro_title' => $request['pro_title'],
             'pro_url' => $request['pro_url'],
             'pro_order' => $request['pro_order'],
-            'procate_name' => $request['procate_name'],
             'pro_remarks' => $request['pro_remarks'],
-            'pro_image' => $request['pro_image'],
+            'procate_id' => $request['procate_id'],
             'pro_slug' => $slug,
             'pro_creator' => $creator,
             'pro_status' => 1,
@@ -69,7 +70,7 @@ class ProjectController extends Controller
                 'pro_image' => $imageName,
                 'created_at' => Carbon::now()->toDateTimeString(),
             ]);
-         }
+        }
 
          if($insert){
              Session::flash('success','Successfully insert project information.');
@@ -103,8 +104,8 @@ class ProjectController extends Controller
             'updated_at' => Carbon::now()->toDateTimeString(),
         ]);
 
-        if($request->hasFile('pic')){
-            $image = $request->file('pic');
+        if($request->hasFile('pro_image')){
+            $image = $request->file('pro_image');
             $imageName = $project_id . time() . '-' . rand(100,200) . '.' . $image->getClientOriginalExtension();
             Image::make($image)->save('uploads/projects/'.$imageName);
 

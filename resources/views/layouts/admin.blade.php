@@ -192,13 +192,13 @@
                                 <a class="sidebar-link" href="{{ url('dashboard/recycle/users') }}">Users</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="{{ url('dashboard/recycle/banners') }}">Banners</a>
+                                <a class="sidebar-link" href="{{ url('dashboard/banner/recycle_banner') }}">Banners</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="{{ url('dashboard/recycle/services') }}">Services</a>
+                                <a class="sidebar-link" href="{{ url('dashboard/service/recycle_service') }}">Services</a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="{{ url('dashboard/recycle/projects') }}">Projects</a>
+                                <a class="sidebar-link" href="{{ url('dashboard/recycle/project') }}">Projects</a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="{{ url('dashboard/recycle/testimonials') }}">Testimonials</a>
