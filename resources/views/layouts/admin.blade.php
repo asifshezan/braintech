@@ -229,10 +229,13 @@
                     </li>
 
 
-                    <form action="{{route('logout')}}" method="POST" id="logout-form"> @csrf <li class="sidebar-item">
+                    <form action="{{route('logout')}}" method="POST" id="logout-form">
+                         @csrf
+
+                        <li class="sidebar-item">
                             <a class="sidebar-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fas fa-right-from-bracket"></i>
+                                <i class="fas fa-right-from-bracket text-danger"></i>
                                 <span class="align-middle">Logout</span>
                             </a>
                         </li>

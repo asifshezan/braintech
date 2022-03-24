@@ -1,59 +1,124 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+<!-- Mirrored from appstack.bootlab.io/pages-sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Mar 2022 14:40:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Bootstrap 5 Admin &amp; Dashboard Template">
+	<meta name="author" content="Bootlab">
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+	<title>Sign Up | AppStack - Admin &amp; Dashboard Template</title>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+	<link rel="canonical" href="pages-sign-up.html" />
+	<link rel="shortcut icon" href="{{ asset('contents/admin') }}/img/favicon.ico">
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&amp;display=swap" rel="stylesheet">
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+	<!-- BEGIN SETTINGS -->
+	<!-- Remove this after purchasing -->
+	<link class="js-stylesheet" href="{{ asset('contents/admin') }}/css/light.css" rel="stylesheet">
+	<script src="{{ asset('contents/admin') }}/js/settings.js"></script>
+	<!-- END SETTINGS -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2120269,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3ZYEKLQ68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+  gtag('config', 'G-Q3ZYEKLQ68');
+</script></head>
+<!--
+  HOW TO USE:
+  data-theme: default (default), dark, light
+  data-layout: fluid (default), boxed
+  data-sidebar-position: left (default), right
+  data-sidebar-behavior: sticky (default), fixed, compact
+-->
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
+	<div class="main d-flex justify-content-center w-100">
+		<main class="content d-flex p-0">
+			<div class="container d-flex flex-column">
+				<div class="row h-100">
+					<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+						<div class="d-table-cell align-middle">
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+							<div class="text-center mt-4">
+								<h1 class="h2">Get started</h1>
+								<p class="lead">
+									Start creating the best possible user experience for you customers.
+								</p>
+							</div>
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
+							<div class="card">
+								<div class="card-body">
+									<div class="m-sm-4">
+										<form method="POST" action="{{ route('register') }}">
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label for="useremail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                                                <div class="invalid-feedback">
+                                                    Please Enter Email
+                                                </div>
+                                            </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Username</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Enter username" required>
+                                                <div class="invalid-feedback">
+                                                    Please Enter Username
+                                                </div>
+                                            </div>
 
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+                                            <div class="mb-3">
+                                                <label for="userpassword" class="form-label">Password</label>
+                                                <input type="password" class="form-control" name="password" placeholder="Enter password" required>
+                                                <div class="invalid-feedback">
+                                                    Please Enter Password
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="userpassword" class="form-label">Confirm Password</label>
+                                                <input type="password" class="form-control" name="password_confirmation" placeholder="Enter password" required>
+                                                <div class="invalid-feedback">
+                                                    Please Enter Password
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-4 d-grid">
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit">Register</button>
+                                            </div>
+                                        </form>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="{{ asset('contents/admin') }}/js/app.js"></script>
+
+</body>
+
+
+<!-- Mirrored from appstack.bootlab.io/pages-sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Mar 2022 14:40:31 GMT -->
+</html>

@@ -1,56 +1,113 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+<!-- Mirrored from appstack.bootlab.io/pages-sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Mar 2022 14:40:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Bootstrap 5 Admin &amp; Dashboard Template">
+	<meta name="author" content="Bootlab">
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+	<title>Sign In | AppStack - Admin &amp; Dashboard Template</title>
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+	<link rel="canonical" href="pages-sign-in.html" />
+	<link rel="shortcut icon" href="{{ asset('contents/admin') }}/img/favicon.ico">
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&amp;display=swap" rel="stylesheet">
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
+	<!-- Remove this after purchasing -->
+	<link class="js-stylesheet" href="{{ asset('contents/admin') }}/css/light.css" rel="stylesheet">
+	<script src="{{ asset('contents/admin') }}/js/settings.js"></script>
+	<!-- END SETTINGS -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2120269,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3ZYEKLQ68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+  gtag('config', 'G-Q3ZYEKLQ68');
+</script></head>
+<!--
+  HOW TO USE:
+  data-theme: default (default), dark, light
+  data-layout: fluid (default), boxed
+  data-sidebar-position: left (default), right
+  data-sidebar-behavior: sticky (default), fixed, compact
+-->
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
+	<div class="main d-flex justify-content-center w-100">
+		<main class="content d-flex p-0">
+			<div class="container d-flex flex-column">
+				<div class="row h-100">
+					<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+						<div class="d-table-cell align-middle">
 
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+							<div class="text-center mt-4">
+								<h1 class="h2">Welcome back, Chris</h1>
+								<p class="lead">
+									Sign in to your account to continue
+								</p>
+							</div>
+
+							<div class="card">
+								<div class="card-body">
+									<div class="m-sm-4">
+										<div class="text-center">
+											<img src="{{ asset('contents/admin') }}/img/avatars/avatar.jpg" alt="Chris Wood" class="img-fluid rounded-circle" width="132" height="132" />
+										</div>
+										<form method="POST" action="{{ route('login') }}">
+                                            @csrf
+											<div class="mb-3">
+												<label class="form-label">Email</label>
+												<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" />
+											</div>
+											<div class="mb-3">
+												<label class="form-label">Password</label>
+												<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
+												<small>
+            <a href="pages-reset-password.html">Forgot password?</a>
+          </small>
+											</div>
+											<div>
+												<div class="form-check align-items-center">
+													<input id="customControlInline" type="checkbox" class="form-check-input" value="remember-me" name="remember-me" checked>
+													<label class="form-check-label text-small" for="customControlInline">Remember me next time</label>
+												</div>
+											</div>
+											<div class="text-center mt-3">
+												<button class="btn btn-primary waves-effect waves-light" type="submit">Log In</button>
+												<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="{{ asset('contents/admin') }}/js/app.js"></script>
+
+</body>
+
+
+<!-- Mirrored from appstack.bootlab.io/pages-sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Mar 2022 14:40:31 GMT -->
+</html>
