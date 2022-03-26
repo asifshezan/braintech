@@ -235,5 +235,9 @@ Route::get('dashboard/project/restore/{slug}', [RecycleController::class, 'proje
 Route::post('dashboard/project/delete', [RecycleController::class, 'project_delete']);
 
 
+// Testimonial Recycle
+Route::get('dashboard/recycle/testimonials', [RecycleController::class, 'recycle_testimonial']);
+Route::get('dashboard/testimonial/restore/{slug}', [RecycleController::class, 'test_restore']);
+Route::post('dashboard/testimonial/delete', [RecycleController::class, 'test_delete']);
 
 require __DIR__.'/auth.php';
