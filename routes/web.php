@@ -240,4 +240,10 @@ Route::get('dashboard/recycle/testimonials', [RecycleController::class, 'recycle
 Route::get('dashboard/testimonial/restore/{slug}', [RecycleController::class, 'test_restore']);
 Route::post('dashboard/testimonial/delete', [RecycleController::class, 'test_delete']);
 
+
+// Partner Recycle
+Route::get('dashboard/recycle/partners', [RecycleController::class, 'recycle_partner']);
+Route::get('dashboard/partner/restore/{slug}', [RecycleController::class, 'partner_restore']);
+Route::post('dashboard/partner/delete', [RecycleController::class, 'partner_delete']);
+
 require __DIR__.'/auth.php';

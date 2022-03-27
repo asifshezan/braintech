@@ -8,6 +8,7 @@ use App\Models\Banner;
 use App\Models\Service;
 use App\Models\Project;
 use App\Models\Testimonial;
+use App\Models\Partner;
 use App\Models\ProjectCategory;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -163,6 +164,42 @@ class RecycleController extends Controller
         }else{
             Session::flash('error','Opps!! Failed Delete.');
             return redirect('dashboard/recycle/project');
+        }
+    }
+
+
+    // Partner Recycle
+
+    public function recycle_partner(){
+        $allPart = Partner::where('partner_status',0)->orderBy('partner_id','ASC')->get();
+        return view('admin.recycle.recycle_partner', compact('allPart'));
+    }
+
+    public function partner_restore($slug){
+        $restore = Partner::where('partner_status',0)->where('partner_slug',$slug)->update([
+            'partner_status' => 1,
+            'updated_at' => Carbon::now()->toDateTimeString(),
+        ]);
+
+        if($restore){
+            Session::flash('success','Successfully restore');
+            return redirect('dashboard/partner');
+        }else{
+            Session::flash('error','Opps!! Failed update.');
+            return redirect()->back();
+        }
+    }
+
+    public function partner_delete(){
+        $id = $_POST['modal_id'];
+        $delete = Partner::where('partner_status',0)->where('partner_id',$id)->delete();
+
+        if($delete){
+            Session::flash('success','Successfully delete');
+            return redirect('dashboard/recycle/partners');
+        }else{
+            Session::flash('error','Failed to delete.');
+            return redirect('dashboard/recycle/partners');
         }
     }
 }
