@@ -67,6 +67,14 @@
                     <form  method="post" action="{{ url('contact-message')}}">
                         @csrf
                         <fieldset>
+                            @if (Session::has('success'))
+                    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                        <strong>{{ Session::get('success') }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    @endif
                             <div class="row">
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
                                     <input class="from-control" type="text"  name="cm_name" placeholder="Name" required="">
@@ -88,6 +96,7 @@
                             <div class="btn-part">
                               <input class="submit sub-small" type="submit" value="Submit Now">
                             </div>
+
                         </fieldset>
                     </form>
                 </div>
