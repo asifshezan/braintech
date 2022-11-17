@@ -8,7 +8,7 @@
             <li title="Braintech - IT Solutions and Technology Startup HTML Template">
                 <a class="active" href="index.html">Home</a>
             </li>
-           <li>Contact</li>
+            <li>Contact</li>
         </ul>
     </div>
 </div>
@@ -22,58 +22,58 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 md-mb-60">
-               <div class="contact-box">
-                    <div class="sec-title mb-45">
-                        <span class="sub-text new-text white-color">Let's Talk</span>
-                        <h2 class="title white-color">Speak With Expert Engineers.</h2>
+                <div class="contact-box">
+                        <div class="sec-title mb-45">
+                            <span class="sub-text new-text white-color">Let's Talk</span>
+                            <h2 class="title white-color">Speak With Expert Engineers.</h2>
+                        </div>
+                    <div class="address-box mb-25">
+                        <div class="address-icon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="address-text">
+                                <span class="label">Email:</span>
+                                <a href="tel:123222-8888">{{ $contacts->cont_email1 }}</a>
+                        </div>
                     </div>
-                   <div class="address-box mb-25">
-                       <div class="address-icon">
-                           <i class="fa fa-home"></i>
-                       </div>
-                       <div class="address-text">
-                            <span class="label">Email:</span>
-                            <a href="tel:123222-8888">{{ $contacts->cont_email1 }}</a>
-                       </div>
-                   </div>
-                   <div class="address-box mb-25">
-                       <div class="address-icon">
-                           <i class="fa fa-phone"></i>
-                       </div>
-                       <div class="address-text">
-                           <span class="label">Phone:</span>
-                           <a href="#">{{ $contacts->cont_phone1 }}</a>
-                       </div>
-                   </div>
-                   <div class="address-box">
-                       <div class="address-icon">
-                           <i class="fa fa-map-marker"></i>
-                       </div>
-                       <div class="address-text">
-                           <span class="label">Address:</span>
-                           <div class="desc">{{ $contacts->cont_add1 }}</div>
-                       </div>
-                   </div>
-               </div>
-            </div>
-            <div class="col-lg-8 pl-70 md-pl-15">
-                <div class="contact-widget">
-                   <div class="sec-title2 mb-40">
-                       <span class="sub-text contact mb-15">Get In Touch</span>
-                       <h2 class="title testi-title">Fill The Form Below</h2>
+                    <div class="address-box mb-25">
+                        <div class="address-icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="address-text">
+                            <span class="label">Phone:</span>
+                            <a href="#">{{ $contacts->cont_phone1 }}</a>
+                        </div>
+                    </div>
+                    <div class="address-box">
+                        <div class="address-icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="address-text">
+                            <span class="label">Address:</span>
+                            <div class="desc">{{ $contacts->cont_add1 }}</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-8 pl-70 md-pl-15">
+                    <div class="contact-widget">
+                    <div class="sec-title2 mb-40">
+                        <span class="sub-text contact mb-15">Get In Touch</span>
+                        <h2 class="title testi-title">Fill The Form Below</h2>
 
-                   </div>
-                    <div id="form-messages"></div>
-                    <form  method="post" action="{{ url('contact-message')}}">
-                        @csrf
-                        <fieldset>
-                            @if (Session::has('success'))
-                    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-                        <strong>{{ Session::get('success') }}</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
+                    </div>
+                        <div id="form-messages"></div>
+                        <form  method="post" action="{{ url('contact-message')}}">
+                            @csrf
+                            <fieldset>
+                                @if (Session::has('success'))
+                        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                            <strong>{{ Session::get('success') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     @endif
                             <div class="row">
                                 <div class="col-lg-6 mb-30 col-md-6 col-sm-6">

@@ -230,7 +230,7 @@
 
 
                     <form action="{{route('logout')}}" method="POST" id="logout-form">
-                         @csrf
+                             @csrf
 
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="{{ route('logout') }}"

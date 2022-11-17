@@ -99,7 +99,7 @@
                     <div class="sec-title2 text-center mb-45">
                         <span class="sub-text">Services</span>
                         <h2 class="title">
-                           We Are Offering All Kinds of IT Solutions Services
+                            We Are Offering All Kinds of IT Solutions Services
                         </h2>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                     </div>
                     <div class="shape-part">
                         <div class="left-side">
-                           <img src="{{ asset('contents/website')}}/images/services/shape-2.png" alt="">
+                            <img src="{{ asset('contents/website')}}/images/services/shape-2.png" alt="">
                         </div>
                         <div class="right-side">
                             <img src="{{ asset('contents/website')}}/images/services/shape-3.png" alt="">
@@ -147,7 +147,7 @@
                     <div class="row rs-vertical-middle">
                         <div class="col-lg-6">
                             <div class="image-part">
-                              <img src="{{ asset('contents/website')}}/images/call-us/contact-here.png" alt="">
+                                <img src="{{ asset('contents/website')}}/images/call-us/contact-here.png" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -174,40 +174,40 @@
 
             <!-- Counter Section Start -->
             <div class="rs-counter main-counter-home">
-                 <div class="counter-top-area text-center bg2">
-                     <div class="row">
-                         <div class="col-lg-4 md-mb-40">
-                             <div class="counter-list">
-                                 <div class="counter-text">
-                                     <div class="count-number">
-                                         <span class="rs-count k">80</span>
-                                     </div>
-                                     <h3 class="title">Happy Clients</h3>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-lg-4 md-mb-40">
-                             <div class="counter-list">
-                                 <div class="counter-text">
-                                     <div class="count-number">
-                                         <span class="rs-count plus">50</span>
-                                     </div>
-                                     <h3 class="title">Companies</h3>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-lg-4">
-                             <div class="counter-list">
-                                 <div class="counter-text">
-                                     <div class="count-number">
-                                         <span class="rs-count plus">230</span>
-                                     </div>
-                                     <h3 class="title">Projects Done</h3>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                    <div class="counter-top-area text-center bg2">
+                        <div class="row">
+                            <div class="col-lg-4 md-mb-40">
+                                <div class="counter-list">
+                                    <div class="counter-text">
+                                        <div class="count-number">
+                                            <span class="rs-count k">80</span>
+                                        </div>
+                                        <h3 class="title">Happy Clients</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 md-mb-40">
+                                <div class="counter-list">
+                                    <div class="counter-text">
+                                        <div class="count-number">
+                                            <span class="rs-count plus">50</span>
+                                        </div>
+                                        <h3 class="title">Companies</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="counter-list">
+                                    <div class="counter-text">
+                                        <div class="count-number">
+                                            <span class="rs-count plus">230</span>
+                                        </div>
+                                        <h3 class="title">Projects Done</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
             <!-- Counter Section End -->
 
@@ -402,13 +402,13 @@
                                 </ul>
                             </div>
                             <div class="blog-content">
-                               <ul class="blog-meta">
-                                   <li class="date"><i class="fa fa-calendar-check-o"></i> 16 Nov 2020</li>
-                                   <li class="admin"><i class="fa fa-user-o"></i> admin</li>
-                               </ul>
-                               <h3 class="blog-title"><a href="blog-details.html">Necessity May Give Us Your Best Virtual Court System</a></h3>
-                               <p class="desc">We denounce with righteous indige nation and dislike men who are so beguiled...</p>
-                               <div class="blog-button"><a href="blog-details.html">Learn More</a></div>
+                                <ul class="blog-meta">
+                                    <li class="date"><i class="fa fa-calendar-check-o"></i> 16 Nov 2020</li>
+                                    <li class="admin"><i class="fa fa-user-o"></i> admin</li>
+                                </ul>
+                                <h3 class="blog-title"><a href="blog-details.html">Necessity May Give Us Your Best Virtual Court System</a></h3>
+                                <p class="desc">We denounce with righteous indige nation and dislike men who are so beguiled...</p>
+                                <div class="blog-button"><a href="blog-details.html">Learn More</a></div>
                             </div>
                         </div>
                         <div class="blog-item">
@@ -419,13 +419,13 @@
                                 </ul>
                             </div>
                             <div class="blog-content">
-                               <ul class="blog-meta">
-                                   <li class="date"><i class="fa fa-calendar-check-o"></i> 20 December 2020</li>
-                                   <li class="admin"><i class="fa fa-user-o"></i> admin</li>
-                               </ul>
-                               <h3 class="blog-title"><a href="blog-details.html">Tech Products That Makes Its Easier to Stay at Home</a></h3>
-                               <p class="desc">We denounce with righteous indige nation and dislike men who are so beguiled...</p>
-                               <div class="blog-button"><a href="blog-details.html">Learn More</a></div>
+                                <ul class="blog-meta">
+                                    <li class="date"><i class="fa fa-calendar-check-o"></i> 20 December 2020</li>
+                                    <li class="admin"><i class="fa fa-user-o"></i> admin</li>
+                                </ul>
+                                <h3 class="blog-title"><a href="blog-details.html">Tech Products That Makes Its Easier to Stay at Home</a></h3>
+                                <p class="desc">We denounce with righteous indige nation and dislike men who are so beguiled...</p>
+                                <div class="blog-button"><a href="blog-details.html">Learn More</a></div>
                             </div>
                         </div>
                         <div class="blog-item">
